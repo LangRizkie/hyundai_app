@@ -1,5 +1,41 @@
 import 'package:flutter/material.dart';
 
+class TitlePageType {
+  String title;
+
+  TitlePageType({
+    required this.title,
+  });
+
+  factory TitlePageType.fromJson(Map<String, dynamic> json) => TitlePageType(
+        title: json['title'],
+      );
+
+  Map<String, dynamic> toJson() => {
+        'title': title,
+      };
+}
+
+class ResultPageType {
+  String title;
+  String description;
+
+  ResultPageType({
+    required this.title,
+    required this.description,
+  });
+
+  factory ResultPageType.fromJson(Map<String, dynamic> json) => ResultPageType(
+        title: json['title'],
+        description: json['description'],
+      );
+
+  Map<String, dynamic> toJson() => {
+        'title': title,
+        'description': description,
+      };
+}
+
 class ListType {
   String label;
   String value;

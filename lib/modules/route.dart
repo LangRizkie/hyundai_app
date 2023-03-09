@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:hyundai_app/modules/generic.dart';
 import 'package:hyundai_app/modules/global.dart';
 import 'package:hyundai_app/screens/forgot/forgot_page.dart';
 import 'package:hyundai_app/screens/forgot/forgot_setup_page.dart';
@@ -53,7 +54,7 @@ class RouteModule extends Module {
         ChildRoute(
           Screens.forgot,
           child: (context, args) => ForgotPageScreen(
-            title: args.queryParams['title']!,
+            title: TitlePageType.fromJson(args.data).title,
           ),
         ),
         ChildRoute(
@@ -62,7 +63,10 @@ class RouteModule extends Module {
         ),
         ChildRoute(
           Screens.success,
-          child: (context, args) => const SuccessPageScreen(),
+          child: (context, args) => SuccessPageScreen(
+            title: ResultPageType.fromJson(args.data).title,
+            description: ResultPageType.fromJson(args.data).description,
+          ),
         ),
       ];
 }

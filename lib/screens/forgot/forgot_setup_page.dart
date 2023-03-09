@@ -7,6 +7,7 @@ import 'package:hyundai_app/components/customization/custom_button.dart';
 import 'package:hyundai_app/components/gap.dart';
 import 'package:hyundai_app/components/labeled_textformfield.dart';
 import 'package:hyundai_app/components/layout.dart';
+import 'package:hyundai_app/modules/generic.dart';
 import 'package:hyundai_app/modules/route.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
@@ -112,7 +113,14 @@ class _ForgotSetupPageScreenState extends State<ForgotSetupPageScreen> {
                     label: "Setup New Password",
                     textColor: Colors.white,
                     buttonColor: Palette.primaryColor,
-                    onPressed: () => Modular.to.navigate(Screens.success),
+                    onPressed: () => Modular.to.navigate(
+                      Screens.success,
+                      arguments: ResultPageType(
+                        title: "Password Reset Successfully",
+                        description:
+                            "Login now to continue using the application",
+                      ).toJson(),
+                    ),
                   ),
                 ],
               ),

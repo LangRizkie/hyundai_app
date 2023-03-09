@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:hyundai_app/components/customization/custom_bottomsheet.dart';
 import 'package:hyundai_app/components/customization/custom_list_icon_button.dart';
 import 'package:hyundai_app/components/login/form.dart';
+import 'package:hyundai_app/modules/generic.dart';
 import 'package:hyundai_app/modules/route.dart';
 import 'package:hyundai_app/components/layout.dart';
 import 'package:hyundai_app/components/login/hero_text.dart';
@@ -59,16 +60,22 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
             CustomListIconButton(
               prefixIcon: Icons.email_outlined,
               label: "Reset by Email",
-              onPressed: () => Modular.to.pop("${Screens.forgot}?title=Email"),
+              onPressed: () => Modular.to.pushNamed(
+                Screens.forgot,
+                arguments: TitlePageType(title: "Email").toJson(),
+              ),
             ),
             CustomListIconButton(
               prefixIcon: Icons.smartphone,
               label: "Reset by Message",
-              onPressed: () => Modular.to.pop("${Screens.forgot}?title=Phone"),
+              onPressed: () => Modular.to.pushNamed(
+                Screens.forgot,
+                arguments: TitlePageType(title: "Phone").toJson(),
+              ),
             ),
           ],
         );
       },
-    ).then((value) => Modular.to.pushNamed(value));
+    );
   }
 }
