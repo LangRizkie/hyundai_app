@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_scale_tap/flutter_scale_tap.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
@@ -29,7 +30,10 @@ class _CustomListIconButtonState extends State<CustomListIconButton> {
   Widget build(BuildContext context) {
     return ScaleTap(
       scaleMinValue: 0.99,
-      onPressed: widget.onPressed,
+      onPressed: () {
+        Modular.to.pop();
+        widget.onPressed();
+      },
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: const BoxDecoration(

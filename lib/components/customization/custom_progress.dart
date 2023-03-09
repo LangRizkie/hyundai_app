@@ -34,7 +34,7 @@ class _CustomProgressState extends State<CustomProgress> {
             (widget.width ?? MediaQuery.of(context).size.width) * widget.value,
         height: 4,
         color: widget.color,
-        duration: const Duration(milliseconds: 1),
+        duration: const Duration(milliseconds: 100),
         curve: Curves.fastOutSlowIn,
       ),
     );

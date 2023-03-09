@@ -8,6 +8,8 @@ import 'package:hyundai_app/components/customization/custom_button.dart';
 import 'package:hyundai_app/components/customization/custom_list_icon_button.dart';
 import 'package:hyundai_app/components/customization/custom_progress.dart';
 import 'package:hyundai_app/components/gap.dart';
+import 'package:hyundai_app/components/input_calendar.dart';
+import 'package:hyundai_app/components/input_dropdown.dart';
 import 'package:hyundai_app/components/labeled_textformfield.dart';
 import 'package:hyundai_app/components/layout.dart';
 import 'package:hyundai_app/modules/theme.dart';
@@ -24,11 +26,15 @@ class _RegisterPageScreenState extends State<RegisterPageScreen>
   TextEditingController password = TextEditingController();
 
   late TabController tabController;
-
   late double currentStep;
+
+  String? salutation;
+  DateTime selectedDate = DateTime.now();
 
   bool showPassword = false;
   bool showConfirmationPassword = false;
+  DateTime maximumDate =
+      DateTime.now().subtract(const Duration(days: 6205)); // 17 years old
 
   @override
   void initState() {
@@ -67,11 +73,10 @@ class _RegisterPageScreenState extends State<RegisterPageScreen>
         children: [
           TabBarView(
             controller: tabController,
+            physics: const NeverScrollableScrollPhysics(),
             children: [
               first(),
-              const Center(
-                child: Text("It's rainy here"),
-              ),
+              second(),
             ],
           ),
           Positioned(
@@ -128,32 +133,10 @@ class _RegisterPageScreenState extends State<RegisterPageScreen>
             children: [
               LabeledTextFormField(
                 label: "Salutation",
-                child: ScaleTap(
+                child: InputDropdown(
                   onPressed: onPressedSalutation,
-                  scaleMinValue: 0.99,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.all(14),
-                    color: Colors.white,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        Text(
-                          "Select Salutation",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black54,
-                          ),
-                        ),
-                        Icon(
-                          Icons.keyboard_arrow_down,
-                          size: 20,
-                          color: Colors.black,
-                        ),
-                      ],
-                    ),
-                  ),
+                  placeholder: "Select Salutation",
+                  value: salutation,
                 ),
               ),
               LabeledTextFormField(
@@ -178,31 +161,9 @@ class _RegisterPageScreenState extends State<RegisterPageScreen>
               ),
               LabeledTextFormField(
                 label: "Date of Birth",
-                child: ScaleTap(
-                  onPressed: () {},
-                  scaleMinValue: 0.99,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.all(14),
-                    color: Colors.white,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        Text(
-                          "DD MM YYYY",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black54,
-                          ),
-                        ),
-                        Icon(
-                          Icons.calendar_today,
-                          size: 20,
-                        ),
-                      ],
-                    ),
-                  ),
+                child: InputCalendar(
+                  onPressed: onPressedDateOfBirth,
+                  value: selectedDate,
                 ),
               ),
               LabeledTextFormField(
@@ -337,27 +298,81 @@ class _RegisterPageScreenState extends State<RegisterPageScreen>
     );
   }
 
+  second() {
+    return SingleChildScrollView(
+      child: Container(
+        padding: const EdgeInsets.only(
+          left: 16,
+          top: 16,
+          right: 16,
+          bottom: 80,
+        ),
+        child: Form(
+          child: Column(
+            children: [
+              LabeledTextFormField(
+                label: "Province",
+                child: InputDropdown(
+                  onPressed: onPressedProvince,
+                  placeholder: "Select Province",
+                ),
+              ),
+              LabeledTextFormField(
+                label: "City",
+                child: InputDropdown(
+                  onPressed: onPressedCity,
+                  placeholder: "Select City",
+                ),
+              ),
+              LabeledTextFormField(
+                label: "District",
+                child: InputDropdown(
+                  onPressed: onPressedDistrict,
+                  placeholder: "Select District",
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   onPressedSalutation() {
+    const salute = ["Mr", "Mrs"];
+
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
       builder: (context) {
         return CustomBottomSheet(
           title: "Salutation",
-          children: [
-            CustomListIconButton(
-              label: "Mr",
-              onPressed: () {},
-              suffixIcon: Icons.check_circle,
-              suffixIconColor: Palette.secondaryColor,
+          children: List.generate(
+            salute.length,
+            (index) => CustomListIconButton(
+              label: salute[index],
+              onPressed: () => setState(() => salutation = salute[index]),
+              suffixIcon:
+                  salutation == salute[index] ? Icons.check_circle : null,
+              suffixIconColor:
+                  salutation == salute[index] ? Palette.secondaryColor : null,
             ),
-            CustomListIconButton(
-              label: "Mrs",
-              onPressed: () {},
-            ),
-          ],
+          ),
         );
       },
     );
   }
+
+  onPressedDateOfBirth() {
+    showDatePicker(
+      context: context,
+      initialDate: maximumDate,
+      firstDate: DateTime(1900),
+      lastDate: maximumDate,
+    ).then((value) => setState(() => selectedDate = value!));
+  }
+
+  onPressedProvince() {}
+  onPressedCity() {}
+  onPressedDistrict() {}
 }
