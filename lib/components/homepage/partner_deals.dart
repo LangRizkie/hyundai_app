@@ -6,17 +6,17 @@ import 'package:hyundai_app/modules/dummy.dart';
 import 'package:hyundai_app/modules/generic.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
-class ServicesComponent extends StatefulWidget {
-  const ServicesComponent({Key? key}) : super(key: key);
+class PartnerDealsComponent extends StatefulWidget {
+  const PartnerDealsComponent({Key? key}) : super(key: key);
 
   @override
-  State<ServicesComponent> createState() => _ServicesComponentState();
+  State<PartnerDealsComponent> createState() => _PartnerDealsComponentState();
 }
 
-class _ServicesComponentState extends State<ServicesComponent> {
+class _PartnerDealsComponentState extends State<PartnerDealsComponent> {
   final SwiperController swiperController = SwiperController();
 
-  final List data = Dummy.hyundaiServicesMenu;
+  final List data = Dummy.partnerDealsMenu;
   int currentIndex = 0;
   int maxPerColumn = 4;
 
@@ -29,7 +29,7 @@ class _ServicesComponentState extends State<ServicesComponent> {
       child: Column(
         children: [
           const TitleRoute(
-            title: "Hyundai Services",
+            title: "Partner Deals",
           ),
           Container(
             decoration: const BoxDecoration(
@@ -64,7 +64,6 @@ class _ServicesComponentState extends State<ServicesComponent> {
                       gap: 12,
                       direction: Axis.vertical,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
                           IconData(

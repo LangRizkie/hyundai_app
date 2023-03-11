@@ -16,6 +16,30 @@ class TitlePageType {
       };
 }
 
+class MenuType {
+  String label;
+  String route;
+  int? icon;
+
+  MenuType({
+    required this.label,
+    required this.route,
+    this.icon,
+  });
+
+  factory MenuType.fromJson(Map<String, dynamic> json) => MenuType(
+        label: json['label'],
+        route: json['route'],
+        icon: json['icon'],
+      );
+
+  Map<String, dynamic> toJson() => {
+        'label': label,
+        'route': route,
+        'icon': icon,
+      };
+}
+
 class ResultPageType {
   String title;
   String description;

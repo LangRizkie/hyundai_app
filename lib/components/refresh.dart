@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:hyundai_app/modules/global.dart';
+import 'package:hyundai_app/modules/theme.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class Refresh extends StatefulWidget {
@@ -25,36 +28,106 @@ class Refresh extends StatefulWidget {
   State<Refresh> createState() => _RefreshState();
 }
 
-class _RefreshState extends State<Refresh> {
-  final RefreshController _refreshController = RefreshController();
+class _RefreshState extends State<Refresh> with TickerProviderStateMixin {
+  final RefreshController refreshController = RefreshController();
 
-  void _onRefresh() async {
-    await widget.onRefresh;
-    _refreshController.refreshCompleted();
+  late AnimationController animationController;
+
+  late AnimationController scaleController;
+
+  @override
+  void initState() {
+    if (mounted) {
+      refreshController.headerMode!.addListener(headerModeListener);
+
+      animationController = AnimationController(
+        duration: const Duration(milliseconds: 1000),
+        vsync: this,
+      );
+
+      scaleController = AnimationController(
+        value: 0,
+        vsync: this,
+        upperBound: 1,
+      );
+    }
+
+    super.initState();
   }
 
-  void _onLoading() async {
+  void headerModeListener() {
+    if (refreshController.headerStatus == RefreshStatus.idle) {
+      scaleController.value = 0.0;
+      animationController.reset();
+    } else if (refreshController.headerStatus == RefreshStatus.refreshing) {
+      animationController.repeat();
+    }
+  }
+
+  void onRefresh() async {
+    await widget.onRefresh;
+    refreshController.refreshCompleted();
+  }
+
+  void onLoading() async {
     await widget.onLoading;
-    _refreshController.loadComplete();
+    refreshController.loadComplete();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: widget.color,
-      child: SmartRefresher(
-        physics: widget.disabled
-            ? const NeverScrollableScrollPhysics()
-            : const BouncingScrollPhysics(),
-        enablePullUp: widget.disabled ? !widget.disabled : widget.enablePullUp,
-        enablePullDown:
-            widget.disabled ? !widget.disabled : widget.enablePullDown,
-        controller: _refreshController,
-        onRefresh: _onRefresh,
-        onLoading: _onLoading,
-        header: const ClassicHeader(),
-        child: widget.child,
+    return SmartRefresher(
+      physics: widget.disabled
+          ? const NeverScrollableScrollPhysics()
+          : const BouncingScrollPhysics(),
+      enablePullUp: widget.disabled ? !widget.disabled : widget.enablePullUp,
+      enablePullDown:
+          widget.disabled ? !widget.disabled : widget.enablePullDown,
+      controller: refreshController,
+      onRefresh: onRefresh,
+      onLoading: onLoading,
+      header: customHeader(),
+      child: widget.child,
+    );
+  }
+
+  customHeader() {
+    return CustomHeader(
+      refreshStyle: RefreshStyle.Behind,
+      onOffsetChange: (offset) {
+        if (refreshController.headerMode!.value != RefreshStatus.refreshing) {
+          scaleController.value = offset / 80;
+        }
+      },
+      builder: (context, mode) => Container(
+        alignment: Alignment.center,
+        color: Global.refreshBackgroundColor,
+        child: FadeTransition(
+          opacity: scaleController,
+          child: ScaleTransition(
+            scale: scaleController,
+            child: SpinKitThreeBounce(
+              controller: animationController,
+              size: 24,
+              itemBuilder: (spinContext, index) => DecoratedBox(
+                decoration: BoxDecoration(
+                  color: index.isEven
+                      ? Palette.secondaryColor
+                      : Palette.backgroundColor,
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    refreshController.dispose();
+    scaleController.dispose();
+    animationController.dispose();
+    super.dispose();
   }
 }

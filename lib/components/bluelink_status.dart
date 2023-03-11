@@ -19,10 +19,11 @@ class _BlueLinkStatusState extends State<BlueLinkStatus> {
 
   @override
   void initState() {
-    super.initState();
     status = widget.isConnected ? 'Connected' : 'Unconnected';
     color =
         widget.isConnected ? Palette.secondaryColor : Colors.blueGrey.shade200;
+
+    super.initState();
   }
 
   @override

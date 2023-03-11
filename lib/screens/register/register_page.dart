@@ -26,8 +26,6 @@ class _RegisterPageScreenState extends State<RegisterPageScreen>
 
   @override
   void initState() {
-    super.initState();
-
     tabController = TabController(
       length: 2,
       vsync: this,
@@ -40,6 +38,8 @@ class _RegisterPageScreenState extends State<RegisterPageScreen>
       () => setState(() => currentStep =
           (tabController.animation!.value + 1) / tabController.length),
     );
+
+    super.initState();
   }
 
   @override

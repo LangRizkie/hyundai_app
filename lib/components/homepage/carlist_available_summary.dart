@@ -24,8 +24,9 @@ class _CarListAvailableSummaryState extends State<CarListAvailableSummary> {
 
   @override
   void initState() {
-    super.initState();
     car = CarListSummaryType.fromJson(widget.car);
+
+    super.initState();
   }
 
   @override

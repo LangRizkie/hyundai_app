@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_scale_tap/flutter_scale_tap.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
@@ -9,17 +8,23 @@ class CustomListIconButton extends StatefulWidget {
     required this.onPressed,
     required this.label,
     this.prefixIcon,
+    this.color,
+    this.backgroundColor,
     this.prefixIconColor = Colors.black,
-    this.suffixIcon,
+    this.suffixIcon = Icons.chevron_right,
     this.suffixIconColor = Colors.black,
+    this.useBottomBorder = true,
   }) : super(key: key);
 
   final Function() onPressed;
   final String label;
+  final Color? color;
+  final Color? backgroundColor;
   final IconData? prefixIcon;
   final Color? prefixIconColor;
   final IconData? suffixIcon;
   final Color? suffixIconColor;
+  final bool? useBottomBorder;
 
   @override
   State<CustomListIconButton> createState() => _CustomListIconButtonState();
@@ -30,19 +35,20 @@ class _CustomListIconButtonState extends State<CustomListIconButton> {
   Widget build(BuildContext context) {
     return ScaleTap(
       scaleMinValue: 0.99,
-      onPressed: () {
-        Modular.to.pop();
-        widget.onPressed();
-      },
+      onPressed: widget.onPressed,
       child: Container(
         padding: const EdgeInsets.all(16),
-        decoration: const BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              width: 1,
-              color: Palette.backgroundSecondaryColor,
-            ),
-          ),
+        decoration: BoxDecoration(
+          color: widget.backgroundColor ?? Colors.white,
+          border:
+              widget.useBottomBorder != null && widget.useBottomBorder == true
+                  ? const Border(
+                      bottom: BorderSide(
+                        width: 1,
+                        color: Palette.backgroundSecondaryColor,
+                      ),
+                    )
+                  : null,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,8 +68,9 @@ class _CustomListIconButtonState extends State<CustomListIconButton> {
                   ),
                 Text(
                   widget.label,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
+                    color: widget.color ?? Colors.black,
                   ),
                 ),
               ],

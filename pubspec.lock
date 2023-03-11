@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  bulleted_list:
+    dependency: "direct main"
+    description:
+      name: bulleted_list
+      sha256: "35ddc56b7fd9977ae3932264f5b722e702748a044aa16f0a7109bf7e4886fedb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1+0.1a"
   card_swiper:
     dependency: "direct main"
     description:
@@ -142,6 +150,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  flutter_spinkit:
+    dependency: "direct main"
+    description:
+      name: flutter_spinkit
+      sha256: "77a2117c0517ff909221f3160b8eb20052ab5216107581168af574ac1f05dff8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.1.0"
   flutter_svg:
     dependency: transitive
     description:

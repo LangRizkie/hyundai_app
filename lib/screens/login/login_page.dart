@@ -53,29 +53,33 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
-      builder: (context) {
-        return CustomBottomSheet(
-          title: "Forgot Password",
-          children: [
-            CustomListIconButton(
-              prefixIcon: Icons.email_outlined,
-              label: "Reset by Email",
-              onPressed: () => Modular.to.pushNamed(
+      builder: (context) => CustomBottomSheet(
+        title: "Forgot Password",
+        children: [
+          CustomListIconButton(
+            prefixIcon: Icons.email_outlined,
+            label: "Reset by Email",
+            onPressed: () {
+              Modular.to.pop();
+              Modular.to.pushNamed(
                 Screens.forgot,
                 arguments: TitlePageType(title: "Email").toJson(),
-              ),
-            ),
-            CustomListIconButton(
-              prefixIcon: Icons.smartphone,
-              label: "Reset by Message",
-              onPressed: () => Modular.to.pushNamed(
+              );
+            },
+          ),
+          CustomListIconButton(
+            prefixIcon: Icons.smartphone,
+            label: "Reset by Message",
+            onPressed: () {
+              Modular.to.pop();
+              Modular.to.pushNamed(
                 Screens.forgot,
                 arguments: TitlePageType(title: "Phone").toJson(),
-              ),
-            ),
-          ],
-        );
-      },
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }

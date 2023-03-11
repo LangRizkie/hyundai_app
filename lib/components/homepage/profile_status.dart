@@ -1,5 +1,7 @@
+import 'package:bulleted_list/bulleted_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_scale_tap/flutter_scale_tap.dart';
+import 'package:hyundai_app/components/customization/custom_bottomsheet.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
 class ProfileStatus extends StatefulWidget {
@@ -32,12 +34,14 @@ class _ProfileStatusState extends State<ProfileStatus> {
               suffixIcon: Icons.info_outline_rounded,
               title: 'Member',
               value: 'Blue +',
+              onPressed: onPressedMember,
             ),
             card(
               prefixIcon: Icons.blur_circular,
               suffixIcon: Icons.chevron_right,
               title: 'Coins',
               value: '500.000',
+              onPressed: () {},
             ),
           ],
         ),
@@ -49,10 +53,11 @@ class _ProfileStatusState extends State<ProfileStatus> {
     required IconData prefixIcon,
     required IconData suffixIcon,
     required String title,
+    Function()? onPressed,
     String? value,
   }) {
     return ScaleTap(
-      onPressed: () {},
+      onPressed: onPressed,
       child: Container(
         width: MediaQuery.of(context).size.width * 0.44,
         height: widget.height,
@@ -114,6 +119,30 @@ class _ProfileStatusState extends State<ProfileStatus> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  onPressedMember() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      enableDrag: false,
+      useSafeArea: true,
+      isScrollControlled: true,
+      builder: (context) => const CustomBottomSheet(
+        title: "Member Info",
+        children: [
+          BulletedList(
+            bullet: Text("\u2022"),
+            listItems: [
+              Text(
+                  "Coin value equals to IDR value (i.e. 200,000 coins = 200,000 IDR)"),
+              Text("You can earn more coins by signing up your Hyundai Car"),
+              Text("You can redeem coins with our rewards (vouchers)"),
+            ],
+          ),
+        ],
       ),
     );
   }

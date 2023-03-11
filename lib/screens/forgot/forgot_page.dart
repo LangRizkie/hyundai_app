@@ -27,9 +27,10 @@ class _ForgotPageScreenState extends State<ForgotPageScreen> {
 
   @override
   void initState() {
-    super.initState();
     isEmail = widget.title.toLowerCase() == "email";
     placeholder = isEmail ? widget.title : "Phone Number";
+
+    super.initState();
   }
 
   @override

@@ -49,6 +49,8 @@ dependencies:
   flutter_countdown_timer: ^4.1.0
   flutter_password_strength: ^0.1.6
   intl: ^0.18.0
+  bulleted_list: ^0.0.1+0.1a
+  flutter_spinkit: ^5.1.0
 
 dev_dependencies:
   flutter_test:

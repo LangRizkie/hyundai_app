@@ -68,7 +68,7 @@ class _ProfileDataState extends State<ProfileData> {
 
   CircleAvatar picture() {
     return const CircleAvatar(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Palette.secondaryColor,
       child: Text('GR'),
     );
   }

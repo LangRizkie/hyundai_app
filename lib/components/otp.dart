@@ -27,12 +27,12 @@ class _OTPState extends State<OTP> {
 
   @override
   void initState() {
-    super.initState();
-
     if (Global.otp > 0) {
       endTime = Global.otp;
       setState(() => isRequest = true);
     }
+
+    super.initState();
   }
 
   @override
@@ -161,10 +161,9 @@ class _OTPState extends State<OTP> {
 
   @override
   void dispose() {
-    super.dispose();
-
     if (isRequest) {
       Global.otp = endTime;
     }
+    super.dispose();
   }
 }

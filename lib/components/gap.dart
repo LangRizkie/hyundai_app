@@ -7,6 +7,7 @@ class Gap extends StatefulWidget {
     this.direction = Axis.horizontal,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.start,
+    this.mainAxisSize = MainAxisSize.max,
     required this.children,
   }) : super(key: key);
 
@@ -14,6 +15,7 @@ class Gap extends StatefulWidget {
   final Axis direction;
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;
+  final MainAxisSize mainAxisSize;
   final List<Widget> children;
 
   @override
@@ -31,10 +33,14 @@ class _GapState extends State<Gap> {
     return Row(
       mainAxisAlignment: widget.mainAxisAlignment,
       crossAxisAlignment: widget.crossAxisAlignment,
+      mainAxisSize: widget.mainAxisSize,
       children: [
-        ...widget.children.asMap().entries.map((e) => separator(
-            child: widget.children[e.key],
-            gap: e.key != widget.children.length - 1 ? widget.gap : 0))
+        ...widget.children.asMap().entries.map(
+              (e) => separator(
+                child: widget.children[e.key],
+                gap: e.key != widget.children.length - 1 ? widget.gap : 0,
+              ),
+            )
       ],
     );
   }
@@ -43,10 +49,14 @@ class _GapState extends State<Gap> {
     return Column(
       mainAxisAlignment: widget.mainAxisAlignment,
       crossAxisAlignment: widget.crossAxisAlignment,
+      mainAxisSize: widget.mainAxisSize,
       children: [
-        ...widget.children.asMap().entries.map((e) => separator(
-            child: widget.children[e.key],
-            gap: e.key != widget.children.length - 1 ? widget.gap : 0))
+        ...widget.children.asMap().entries.map(
+              (e) => separator(
+                child: widget.children[e.key],
+                gap: e.key != widget.children.length - 1 ? widget.gap : 0,
+              ),
+            )
       ],
     );
   }

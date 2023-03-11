@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_password_strength/flutter_password_strength.dart';
 import 'package:flutter_scale_tap/flutter_scale_tap.dart';
 import 'package:hyundai_app/components/customization/custom_bottomsheet.dart';
@@ -214,22 +215,23 @@ class _RegisterFirstStepScreenState extends State<RegisterFirstStepScreen> {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
-      builder: (context) {
-        return CustomBottomSheet(
-          title: "Salutation",
-          children: List.generate(
-            salute.length,
-            (index) => CustomListIconButton(
+      builder: (context) => CustomBottomSheet(
+        title: "Salutation",
+        children: List.generate(
+          salute.length,
+          (index) {
+            Modular.to.pop();
+            return CustomListIconButton(
               label: salute[index],
               onPressed: () => setState(() => salutation = salute[index]),
               suffixIcon:
                   salutation == salute[index] ? Icons.check_circle : null,
               suffixIconColor:
                   salutation == salute[index] ? Palette.secondaryColor : null,
-            ),
-          ),
-        );
-      },
+            );
+          },
+        ),
+      ),
     );
   }
 

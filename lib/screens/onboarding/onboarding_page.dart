@@ -19,15 +19,16 @@ class OnBoardingPageScreen extends StatefulWidget {
 class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
   final List lang = Dummy.languages;
   final List data = Dummy.onboardingData;
-  final SwiperController _swiperController = SwiperController();
+  final SwiperController swiperController = SwiperController();
 
   late String selectedLanguage;
   int currentIndex = 0;
 
   @override
   void initState() {
-    super.initState();
     selectedLanguage = ListType.fromJson(lang.first).label;
+
+    super.initState();
   }
 
   onLanguageChanged(String value) => setState(() => selectedLanguage = value);
@@ -47,7 +48,7 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
                 data: data,
                 itemCount: data.length,
                 currentIndex: currentIndex,
-                controller: _swiperController,
+                controller: swiperController,
                 onIndexChanged: onIndexChanged,
               ),
               content(
@@ -57,7 +58,7 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
               navigation(
                 itemCount: data.length,
                 currentIndex: currentIndex,
-                controller: _swiperController,
+                controller: swiperController,
               ),
             ],
           ),

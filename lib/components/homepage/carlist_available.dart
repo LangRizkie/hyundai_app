@@ -39,10 +39,12 @@ class _CarListAvailableState extends State<CarListAvailable> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            for (var index = 0; index < cars.length; index++)
-              CarListAvailableSummary(
+            ...List.generate(
+              cars.length,
+              (index) => CarListAvailableSummary(
                 car: cars[index],
               ),
+            ),
             const CarListAvailableAdd(),
           ],
         ),
