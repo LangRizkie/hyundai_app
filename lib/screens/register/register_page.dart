@@ -45,6 +45,7 @@ class _RegisterPageScreenState extends State<RegisterPageScreen>
   @override
   Widget build(BuildContext context) {
     return Layout(
+      canRefresh: false,
       appBar: CustomAppBar(
         title: "Sign Up",
         overrideBackButton: () {

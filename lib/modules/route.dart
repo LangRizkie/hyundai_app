@@ -1,10 +1,14 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:hyundai_app/modules/generic.dart';
 import 'package:hyundai_app/modules/global.dart';
+import 'package:hyundai_app/screens/balance/balance_expiry_page.dart';
+import 'package:hyundai_app/screens/balance/balance_history_page.dart';
+import 'package:hyundai_app/screens/balance/balance_page.dart';
 import 'package:hyundai_app/screens/forgot/forgot_page.dart';
 import 'package:hyundai_app/screens/forgot/forgot_setup_page.dart';
 import 'package:hyundai_app/screens/homepage/home_page.dart';
 import 'package:hyundai_app/screens/login/login_page.dart';
+import 'package:hyundai_app/screens/notification/notification_page.dart';
 import 'package:hyundai_app/screens/onboarding/onboarding_page.dart';
 import 'package:hyundai_app/screens/register/register_page.dart';
 import 'package:hyundai_app/screens/success/success_page.dart';
@@ -17,6 +21,10 @@ class Screens {
   static const forgot = "/forgot";
   static const forgotSetup = "/forgot/setup";
   static const success = "/success";
+  static const notification = "/notification";
+  static const balance = "/balance";
+  static const balanceHistory = "/balance/history";
+  static const balanceExpiry = "/balance/expiry";
 }
 
 class AuthGuard extends RouteGuard {
@@ -67,6 +75,22 @@ class RouteModule extends Module {
             title: ResultPageType.fromJson(args.data).title,
             description: ResultPageType.fromJson(args.data).description,
           ),
+        ),
+        ChildRoute(
+          Screens.notification,
+          child: (context, args) => const NotificationPageScreen(),
+        ),
+        ChildRoute(
+          Screens.balance,
+          child: (context, args) => const BalancePageScreen(),
+        ),
+        ChildRoute(
+          Screens.balanceHistory,
+          child: (context, args) => const BalanceHistoryPageScreen(),
+        ),
+        ChildRoute(
+          Screens.balanceExpiry,
+          child: (context, args) => const BalanceExpiryPageScreen(),
         ),
       ];
 }

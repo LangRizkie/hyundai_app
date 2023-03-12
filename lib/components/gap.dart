@@ -4,6 +4,7 @@ class Gap extends StatefulWidget {
   const Gap({
     Key? key,
     required this.gap,
+    this.disableScroll = false,
     this.direction = Axis.horizontal,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.start,
@@ -12,6 +13,7 @@ class Gap extends StatefulWidget {
   }) : super(key: key);
 
   final double gap;
+  final bool disableScroll;
   final Axis direction;
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;
@@ -25,8 +27,13 @@ class Gap extends StatefulWidget {
 class _GapState extends State<Gap> {
   @override
   Widget build(BuildContext context) {
-    final direction = widget.direction == Axis.horizontal ? row() : column();
-    return direction;
+    return SingleChildScrollView(
+      scrollDirection: widget.direction,
+      physics: widget.disableScroll
+          ? const NeverScrollableScrollPhysics()
+          : const BouncingScrollPhysics(),
+      child: widget.direction == Axis.vertical ? column() : row(),
+    );
   }
 
   Row row() {
@@ -40,7 +47,7 @@ class _GapState extends State<Gap> {
                 child: widget.children[e.key],
                 gap: e.key != widget.children.length - 1 ? widget.gap : 0,
               ),
-            )
+            ),
       ],
     );
   }
@@ -56,7 +63,7 @@ class _GapState extends State<Gap> {
                 child: widget.children[e.key],
                 gap: e.key != widget.children.length - 1 ? widget.gap : 0,
               ),
-            )
+            ),
       ],
     );
   }

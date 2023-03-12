@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hyundai_app/components/customization/custom_list_icon_button.dart';
-import 'package:hyundai_app/components/gap.dart';
 import 'package:hyundai_app/components/title_route.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
@@ -31,32 +29,6 @@ class _LifeStyleBenefitComponentState extends State<LifeStyleBenefitComponent> {
               4,
               (index) => card(index),
             ),
-          ),
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 16),
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Gap(
-            gap: 8,
-            direction: Axis.vertical,
-            children: [
-              CustomListIconButton(
-                onPressed: () {},
-                label: "Exclusive Deals For You",
-                useBottomBorder: false,
-                color: Colors.white,
-                backgroundColor: Palette.primaryColor,
-                suffixIconColor: Colors.white,
-              ),
-              CustomListIconButton(
-                onPressed: () {},
-                label: "Input Promo Code",
-                useBottomBorder: false,
-                color: Colors.white,
-                backgroundColor: Palette.primaryColor,
-                suffixIconColor: Colors.white,
-              ),
-            ],
           ),
         ),
       ],

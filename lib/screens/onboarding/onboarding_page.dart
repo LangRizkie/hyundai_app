@@ -37,6 +37,7 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Layout(
+      canRefresh: false,
       resizeToAvoidBottomInset: false,
       child: Stack(
         children: [
@@ -83,24 +84,19 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
     required SwiperController controller,
     required Function(int index) onIndexChanged,
   }) {
-    return Expanded(
-      flex: 3,
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          maxHeight: 496,
-        ),
-        child: Swiper(
-          controller: controller,
-          itemCount: data.length,
-          loop: false,
-          onIndexChanged: onIndexChanged,
-          itemBuilder: (BuildContext context, int index) {
-            return Image.network(
-              "https://via.placeholder.com/376x496",
-              fit: BoxFit.cover,
-            );
-          },
-        ),
+    return SizedBox(
+      height: 496,
+      child: Swiper(
+        controller: controller,
+        itemCount: data.length,
+        loop: false,
+        onIndexChanged: onIndexChanged,
+        itemBuilder: (BuildContext context, int index) {
+          return Image.network(
+            "https://via.placeholder.com/376x496",
+            fit: BoxFit.cover,
+          );
+        },
       ),
     );
   }
@@ -109,14 +105,14 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
     required List data,
     required int currentIndex,
   }) {
-    return Flexible(
+    return Expanded(
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.only(
           left: 16,
           top: 32,
           right: 16,
-          bottom: 16,
+          bottom: 0,
         ),
         child: Gap(
           gap: 8,
@@ -153,7 +149,7 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
     final isLastIndex = currentIndex == (itemCount - 1);
 
     return Container(
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       padding: const EdgeInsets.all(16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -169,6 +165,7 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
           ),
           Gap(
             gap: 8,
+            direction: Axis.horizontal,
             children: List.generate(
               itemCount,
               (index) => dots(

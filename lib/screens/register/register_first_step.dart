@@ -219,17 +219,16 @@ class _RegisterFirstStepScreenState extends State<RegisterFirstStepScreen> {
         title: "Salutation",
         children: List.generate(
           salute.length,
-          (index) {
-            Modular.to.pop();
-            return CustomListIconButton(
-              label: salute[index],
-              onPressed: () => setState(() => salutation = salute[index]),
-              suffixIcon:
-                  salutation == salute[index] ? Icons.check_circle : null,
-              suffixIconColor:
-                  salutation == salute[index] ? Palette.secondaryColor : null,
-            );
-          },
+          (index) => CustomListIconButton(
+            label: salute[index],
+            onPressed: () {
+              Modular.to.pop();
+              setState(() => salutation = salute[index]);
+            },
+            suffixIcon: salutation == salute[index] ? Icons.check_circle : null,
+            suffixIconColor:
+                salutation == salute[index] ? Palette.secondaryColor : null,
+          ),
         ),
       ),
     );

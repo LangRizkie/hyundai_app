@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:hyundai_app/modules/global.dart';
 import 'package:hyundai_app/modules/theme.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -101,12 +100,12 @@ class _RefreshState extends State<Refresh> with TickerProviderStateMixin {
       },
       builder: (context, mode) => Container(
         alignment: Alignment.center,
-        color: Global.refreshBackgroundColor,
+        color: widget.color,
         child: FadeTransition(
           opacity: scaleController,
           child: ScaleTransition(
             scale: scaleController,
-            child: SpinKitThreeBounce(
+            child: SpinKitRotatingPlain(
               controller: animationController,
               size: 24,
               itemBuilder: (spinContext, index) => DecoratedBox(

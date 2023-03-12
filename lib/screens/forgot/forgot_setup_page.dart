@@ -28,6 +28,7 @@ class _ForgotSetupPageScreenState extends State<ForgotSetupPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Layout(
+      canRefresh: false,
       appBar: const CustomAppBar(
         title: "Setup New Password",
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:hyundai_app/components/icon_badge.dart';
+import 'package:hyundai_app/modules/route.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -10,6 +11,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.isTransparent = false,
     this.title,
     this.overrideBackButton,
+    this.actions,
   })  : preferredSize = const Size.fromHeight(kToolbarHeight),
         super(key: key);
 
@@ -19,6 +21,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   final bool? isTransparent;
   final String? title;
   final Function()? overrideBackButton;
+  final List<Widget>? actions;
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -40,7 +43,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
           IconBadge(
             showBadge: true,
             icon: const Icon(Icons.notifications_outlined),
-            onPressed: () {},
+            onPressed: () => Modular.to.pushNamed(Screens.notification),
           ),
           IconButton(
             icon: const Icon(Icons.search_outlined),
@@ -66,6 +69,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
         ),
         onPressed: widget.overrideBackButton ?? () => Modular.to.pop(),
       ),
+      actions: widget.actions,
     );
   }
 }

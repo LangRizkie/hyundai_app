@@ -36,6 +36,7 @@ class _ForgotPageScreenState extends State<ForgotPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Layout(
+      canRefresh: false,
       appBar: CustomAppBar(
         title: "Reset By ${widget.title}",
       ),

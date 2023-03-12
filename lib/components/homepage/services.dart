@@ -64,7 +64,6 @@ class _ServicesComponentState extends State<ServicesComponent> {
                       gap: 12,
                       direction: Axis.vertical,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
                           IconData(

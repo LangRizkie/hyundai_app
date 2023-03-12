@@ -1,7 +1,9 @@
 import 'package:bulleted_list/bulleted_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_scale_tap/flutter_scale_tap.dart';
 import 'package:hyundai_app/components/customization/custom_bottomsheet.dart';
+import 'package:hyundai_app/modules/route.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
 class ProfileStatus extends StatefulWidget {
@@ -41,7 +43,7 @@ class _ProfileStatusState extends State<ProfileStatus> {
               suffixIcon: Icons.chevron_right,
               title: 'Coins',
               value: '500.000',
-              onPressed: () {},
+              onPressed: () => Modular.to.pushNamed(Screens.balance),
             ),
           ],
         ),

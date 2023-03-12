@@ -24,6 +24,7 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Layout(
+      canRefresh: false,
       child: Container(
         width: double.infinity,
         height: double.infinity,
