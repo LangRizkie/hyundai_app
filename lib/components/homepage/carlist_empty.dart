@@ -26,7 +26,7 @@ class _CarListEmptyState extends State<CarListEmpty> {
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
-              color: Colors.black12,
+              color: Palette.backgroundSecondaryColor,
             ),
           ),
           child: SizedBox(

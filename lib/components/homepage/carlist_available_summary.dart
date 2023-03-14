@@ -44,7 +44,7 @@ class _CarListAvailableSummaryState extends State<CarListAvailableSummary> {
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
-              color: Colors.black12,
+              color: Palette.backgroundSecondaryColor,
             ),
           ),
           child: SizedBox(

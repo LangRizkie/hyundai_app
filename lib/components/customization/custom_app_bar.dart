@@ -10,6 +10,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.isMain = false,
     this.isTransparent = false,
     this.title,
+    this.leadingColor = Colors.black,
     this.overrideBackButton,
     this.actions,
   })  : preferredSize = const Size.fromHeight(kToolbarHeight),
@@ -20,6 +21,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   final bool? isMain;
   final bool? isTransparent;
   final String? title;
+  final Color? leadingColor;
   final Function()? overrideBackButton;
   final List<Widget>? actions;
 
@@ -37,7 +39,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
             widget.isTransparent! ? Colors.transparent : Palette.primaryColor,
         leading: IconButton(
           icon: const Icon(Icons.qr_code),
-          onPressed: () {},
+          onPressed: () => Modular.to.pushNamed(Screens.scanner),
         ),
         actions: [
           IconBadge(
@@ -63,9 +65,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
       backgroundColor:
           widget.isTransparent! ? Colors.transparent : Colors.white,
       leading: IconButton(
-        icon: const Icon(
+        icon: Icon(
           Icons.arrow_back,
-          color: Colors.black,
+          color: widget.leadingColor,
         ),
         onPressed: widget.overrideBackButton ?? () => Modular.to.pop(),
       ),

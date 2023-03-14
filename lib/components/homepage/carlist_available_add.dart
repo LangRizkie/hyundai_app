@@ -25,7 +25,7 @@ class _CarListAvailableAddState extends State<CarListAvailableAdd> {
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
-              color: Colors.black12,
+              color: Palette.backgroundSecondaryColor,
             ),
           ),
           child: SizedBox(

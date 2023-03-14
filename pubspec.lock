@@ -232,6 +232,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.0"
+  mobile_scanner:
+    dependency: "direct main"
+    description:
+      name: mobile_scanner
+      sha256: "4045e8441e21f1fb8998a76fbffd054510dd3a3b1dee55c7c9a2083eee687345"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   modular_core:
     dependency: transitive
     description:
@@ -333,6 +341,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.2"
+  sticky_headers:
+    dependency: "direct main"
+    description:
+      name: sticky_headers
+      sha256: "9b3dd2cb0fd6a7038170af3261f855660cbb241cb56c501452cb8deed7023ede"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.0+2"
   stream_channel:
     dependency: transitive
     description:

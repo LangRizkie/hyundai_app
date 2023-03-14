@@ -7,6 +7,7 @@ class Layout extends StatefulWidget {
     Key? key,
     this.appBar,
     this.resizeToAvoidBottomInset = true,
+    this.extendBodyBehindAppBar = false,
     this.canRefresh = true,
     this.refreshColor = Palette.backgroundColor,
     required this.child,
@@ -14,6 +15,7 @@ class Layout extends StatefulWidget {
 
   final PreferredSizeWidget? appBar;
   final bool? resizeToAvoidBottomInset;
+  final bool extendBodyBehindAppBar;
   final bool canRefresh;
   final Color? refreshColor;
   final Widget child;
@@ -28,6 +30,7 @@ class _LayoutState extends State<Layout> {
     return Scaffold(
       appBar: widget.appBar,
       resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
+      extendBodyBehindAppBar: widget.extendBodyBehindAppBar,
       backgroundColor: Palette.backgroundColor,
       body: Refresh(
         disabled: !widget.canRefresh,

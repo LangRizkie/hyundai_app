@@ -6,11 +6,13 @@ class InputDropdown extends StatefulWidget {
     Key? key,
     required this.onPressed,
     this.placeholder,
+    this.color = Colors.white,
     this.value,
   }) : super(key: key);
 
   final Function() onPressed;
   final String? placeholder;
+  final Color? color;
   final String? value;
 
   @override
@@ -26,16 +28,16 @@ class _InputDropdownState extends State<InputDropdown> {
       child: Container(
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.all(14),
-        color: Colors.white,
+        color: widget.color,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               widget.value ?? widget.placeholder ?? "Select",
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 16,
-                color: Colors.black54,
+                color: widget.value == null ? Colors.black54 : Colors.black,
               ),
             ),
             const Icon(

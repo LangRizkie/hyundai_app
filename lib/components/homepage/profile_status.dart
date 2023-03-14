@@ -66,7 +66,7 @@ class _ProfileStatusState extends State<ProfileStatus> {
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           border: Border.all(
-            color: Colors.black12,
+            color: Palette.backgroundSecondaryColor,
           ),
           color: Colors.white,
         ),
