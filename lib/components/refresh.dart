@@ -75,10 +75,9 @@ class _RefreshState extends State<Refresh> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.disabled) return widget.child;
+
     return SmartRefresher(
-      physics: widget.disabled
-          ? const NeverScrollableScrollPhysics()
-          : const BouncingScrollPhysics(),
       enablePullUp: widget.disabled ? !widget.disabled : widget.enablePullUp,
       enablePullDown:
           widget.disabled ? !widget.disabled : widget.enablePullDown,

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:hyundai_app/components/customization/custom_list_icon_button.dart';
-import 'package:hyundai_app/modules/route.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
 class CollectCouponComponent extends StatefulWidget {
@@ -38,7 +36,7 @@ class _CollectCouponComponentState extends State<CollectCouponComponent> {
           Container(
             margin: const EdgeInsets.only(top: 24),
             child: CustomListIconButton(
-              onPressed: () => Modular.to.pushNamed(Screens.challenges),
+              onPressed: () => {},
               label: "See all challenges",
               useBottomBorder: false,
               color: Colors.white,

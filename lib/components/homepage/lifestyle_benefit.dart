@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:hyundai_app/components/title_route.dart';
+import 'package:hyundai_app/modules/route.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
 class LifeStyleBenefitComponent extends StatefulWidget {
@@ -16,11 +18,12 @@ class _LifeStyleBenefitComponentState extends State<LifeStyleBenefitComponent> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const TitleRoute(
+        TitleRoute(
           title: "Lifestyle Benefit",
           description: "Get the best deal every time from our partners",
           fontSize: 20,
           action: true,
+          onPressed: () => Modular.to.pushNamed(Screens.challenges),
         ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -50,10 +53,15 @@ class _LifeStyleBenefitComponentState extends State<LifeStyleBenefitComponent> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          Container(
             width: double.infinity,
-            height: 146,
-            child: Image.network('https://via.placeholder.com/146x146'),
+            height: 144,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage('https://via.placeholder.com/146x146'),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(8),

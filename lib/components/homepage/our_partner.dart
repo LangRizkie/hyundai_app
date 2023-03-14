@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:hyundai_app/components/gap.dart';
 import 'package:hyundai_app/components/title_route.dart';
+import 'package:hyundai_app/modules/route.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
 class OurPartnerComponent extends StatefulWidget {
@@ -16,11 +18,12 @@ class _OurPartnerComponentState extends State<OurPartnerComponent> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const TitleRoute(
+        TitleRoute(
           title: "Our Partners",
           description: "Find fascinating deals from them",
           fontSize: 20,
           action: true,
+          onPressed: () => Modular.to.pushNamed(Screens.partners),
         ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -50,10 +53,15 @@ class _OurPartnerComponentState extends State<OurPartnerComponent> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          Container(
             width: double.infinity,
             height: 144,
-            child: Image.network('https://via.placeholder.com/280x144'),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage('https://via.placeholder.com/280x144'),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(16),

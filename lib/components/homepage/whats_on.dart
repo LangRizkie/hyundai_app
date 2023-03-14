@@ -74,10 +74,15 @@ class _WhatsOnComponentState extends State<WhatsOnComponent> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          Container(
             width: double.infinity,
             height: 144,
-            child: Image.network('https://via.placeholder.com/280x144'),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage('https://via.placeholder.com/280x144'),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(16),

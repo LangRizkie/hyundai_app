@@ -11,6 +11,7 @@ import 'package:hyundai_app/screens/homepage/home_page.dart';
 import 'package:hyundai_app/screens/login/login_page.dart';
 import 'package:hyundai_app/screens/notification/notification_page.dart';
 import 'package:hyundai_app/screens/onboarding/onboarding_page.dart';
+import 'package:hyundai_app/screens/partners/partners_page.dart';
 import 'package:hyundai_app/screens/register/register_page.dart';
 import 'package:hyundai_app/screens/scanner/scanner_page.dart';
 import 'package:hyundai_app/screens/success/success_page.dart';
@@ -28,6 +29,7 @@ class Screens {
   static const balance = "/balance";
   static const balanceHistory = "/balance/history";
   static const balanceExpiry = "/balance/expiry";
+  static const partners = "/partners";
   static const challenges = "/challenges";
 }
 
@@ -99,6 +101,10 @@ class RouteModule extends Module {
         ChildRoute(
           Screens.balanceExpiry,
           child: (context, args) => const BalanceExpiryPageScreen(),
+        ),
+        ChildRoute(
+          Screens.partners,
+          child: (context, args) => const PartnersPageScreen(),
         ),
         ChildRoute(
           Screens.challenges,

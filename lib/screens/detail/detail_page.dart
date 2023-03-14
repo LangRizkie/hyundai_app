@@ -74,7 +74,7 @@ class _DetailPageScreenState extends State<DetailPageScreen>
                 flexibleSpace: layoutBuilder(),
               ),
               SliverToBoxAdapter(
-                child: Container(
+                child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: top / 2,
                 ),
