@@ -5,11 +5,13 @@ class CustomButton extends StatefulWidget {
     Key? key,
     required this.onPressed,
     required this.label,
+    this.width,
     this.textColor,
     this.buttonColor,
   }) : super(key: key);
 
   final String label;
+  final double? width;
   final Color? textColor;
   final Color? buttonColor;
   final Function() onPressed;
@@ -22,7 +24,7 @@ class _CustomButtonState extends State<CustomButton> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: widget.width ?? double.infinity,
       child: TextButton(
         onPressed: widget.onPressed,
         style: ButtonStyle(

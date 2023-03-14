@@ -97,7 +97,7 @@ class _ChallengesPageScreenState extends State<ChallengesPageScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Text(
-                    "Group",
+                    "ISMAYA Group",
                     style: TextStyle(
                       fontFamily: Constant.fontFamilyText,
                       fontSize: 12,
