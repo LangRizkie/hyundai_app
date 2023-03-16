@@ -65,8 +65,8 @@ class _ChallengesPageScreenState extends State<ChallengesPageScreen> {
         context,
         PageRouteBuilder(
           pageBuilder: (ctx, a, b) => DetailPageScreen(
-            tag: index,
-            title: "Ismaya Group",
+            tag: "challenges detail page $index",
+            title: "ISMAYA Group",
             image: 'https://via.placeholder.com/160x160',
           ),
         ),
@@ -78,7 +78,7 @@ class _ChallengesPageScreenState extends State<ChallengesPageScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Hero(
-              tag: index,
+              tag: "challenges detail page $index",
               child: Container(
                 width: double.infinity,
                 height: 160,

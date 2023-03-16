@@ -12,7 +12,7 @@ class DetailPageScreen extends StatefulWidget {
     required this.image,
   });
 
-  final int tag;
+  final String tag;
   final String title;
   final String image;
 
@@ -27,6 +27,17 @@ class _DetailPageScreenState extends State<DetailPageScreen>
 
   bool status = true;
   double top = 0;
+
+  double get expandedHeight => 240;
+
+  double get minExtent => 56 + 30;
+
+  double get maxExtent => expandedHeight + 30;
+
+  bool get shrink =>
+      scrollController.hasClients &&
+      scrollController.offset > (200 - kToolbarHeight);
+
   @override
   void initState() {
     scrollController.addListener(scrollControllerListener);
@@ -40,16 +51,6 @@ class _DetailPageScreenState extends State<DetailPageScreen>
       setState(() => status = shrink);
     }
   }
-
-  double get expandedHeight => 240;
-
-  double get minExtent => 56 + 30;
-
-  double get maxExtent => expandedHeight + 30;
-
-  bool get shrink =>
-      scrollController.hasClients &&
-      scrollController.offset > (200 - kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
