@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatefulWidget {
   const CustomButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.label,
     this.width,
@@ -25,6 +25,7 @@ class CustomButton extends StatefulWidget {
 }
 
 class _CustomButtonState extends State<CustomButton> {
+  late Widget icon;
   late Text value = Text(
     widget.label,
     style: TextStyle(
@@ -35,9 +36,36 @@ class _CustomButtonState extends State<CustomButton> {
 
   @override
   Widget build(BuildContext context) {
+    icon = widget.prefixIcon ?? value;
+
+    if (widget.prefixIcon == null && widget.suffixIcon == null) {
+      icon = const SizedBox.shrink();
+    }
+
+    if (widget.prefixIcon != null || widget.suffixIcon != null) {
+      return SizedBox(
+        width: widget.width ?? double.infinity,
+        child: TextButton.icon(
+          onPressed: widget.onPressed,
+          style: ButtonStyle(
+            padding: MaterialStateProperty.all(
+              const EdgeInsets.symmetric(
+                vertical: 14,
+              ),
+            ),
+            backgroundColor: MaterialStateProperty.all(
+              widget.buttonColor ?? Colors.transparent,
+            ),
+          ),
+          icon: icon,
+          label: widget.suffixIcon ?? value,
+        ),
+      );
+    }
+
     return SizedBox(
       width: widget.width ?? double.infinity,
-      child: TextButton.icon(
+      child: TextButton(
         onPressed: widget.onPressed,
         style: ButtonStyle(
           padding: MaterialStateProperty.all(
@@ -49,8 +77,7 @@ class _CustomButtonState extends State<CustomButton> {
             widget.buttonColor ?? Colors.transparent,
           ),
         ),
-        icon: widget.prefixIcon ?? value,
-        label: widget.suffixIcon ?? value,
+        child: value,
       ),
     );
   }
