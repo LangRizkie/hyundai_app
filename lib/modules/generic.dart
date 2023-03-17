@@ -60,6 +60,35 @@ class ResultPageType {
       };
 }
 
+class PartnersDetailPageType {
+  final String title;
+  final String description;
+  final String image;
+  final int deals;
+
+  PartnersDetailPageType({
+    required this.title,
+    required this.description,
+    required this.image,
+    required this.deals,
+  });
+
+  factory PartnersDetailPageType.fromJson(Map<String, dynamic> json) =>
+      PartnersDetailPageType(
+        title: json['title'],
+        description: json['description'],
+        image: json['image'],
+        deals: json['deals'],
+      );
+
+  Map<String, dynamic> toJson() => {
+        'title': title,
+        'description': description,
+        'image': image,
+        'deals': deals,
+      };
+}
+
 class ListType {
   String label;
   String value;

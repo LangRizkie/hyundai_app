@@ -33,11 +33,11 @@ class _RegisterFirstStepScreenState extends State<RegisterFirstStepScreen> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: const EdgeInsets.only(
-          left: 16,
-          top: 16,
-          right: 16,
-          bottom: 80,
+        padding: const EdgeInsets.fromLTRB(
+          16,
+          16,
+          16,
+          80,
         ),
         child: Form(
           child: Column(

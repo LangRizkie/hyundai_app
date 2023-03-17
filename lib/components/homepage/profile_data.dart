@@ -26,11 +26,11 @@ class _ProfileDataState extends State<ProfileData> {
           children: [
             Container(
               width: double.infinity,
-              padding: EdgeInsets.only(
-                left: 16,
-                top: 24,
-                right: 16,
-                bottom: widget.height,
+              padding: EdgeInsets.fromLTRB(
+                16,
+                24,
+                16,
+                widget.height,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

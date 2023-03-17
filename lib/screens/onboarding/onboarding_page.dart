@@ -108,11 +108,11 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
     return Expanded(
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.only(
-          left: 16,
-          top: 32,
-          right: 16,
-          bottom: 0,
+        padding: const EdgeInsets.fromLTRB(
+          16,
+          32,
+          16,
+          0,
         ),
         child: Gap(
           gap: 8,

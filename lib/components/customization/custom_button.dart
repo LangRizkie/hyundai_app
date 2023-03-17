@@ -7,11 +7,15 @@ class CustomButton extends StatefulWidget {
     required this.label,
     this.width,
     this.textColor,
+    this.prefixIcon,
+    this.suffixIcon,
     this.buttonColor,
-  }) : super(key: key);
+  }) : assert(prefixIcon == null || suffixIcon == null);
 
   final String label;
   final double? width;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final Color? textColor;
   final Color? buttonColor;
   final Function() onPressed;
@@ -21,11 +25,19 @@ class CustomButton extends StatefulWidget {
 }
 
 class _CustomButtonState extends State<CustomButton> {
+  late Text value = Text(
+    widget.label,
+    style: TextStyle(
+      fontWeight: FontWeight.w400,
+      color: widget.textColor ?? Colors.black,
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: widget.width ?? double.infinity,
-      child: TextButton(
+      child: TextButton.icon(
         onPressed: widget.onPressed,
         style: ButtonStyle(
           padding: MaterialStateProperty.all(
@@ -37,13 +49,8 @@ class _CustomButtonState extends State<CustomButton> {
             widget.buttonColor ?? Colors.transparent,
           ),
         ),
-        child: Text(
-          widget.label,
-          style: TextStyle(
-            fontWeight: FontWeight.w400,
-            color: widget.textColor ?? Colors.black,
-          ),
-        ),
+        icon: widget.prefixIcon ?? value,
+        label: widget.suffixIcon ?? value,
       ),
     );
   }

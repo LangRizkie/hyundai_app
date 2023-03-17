@@ -11,6 +11,7 @@ import 'package:hyundai_app/screens/homepage/home_page.dart';
 import 'package:hyundai_app/screens/login/login_page.dart';
 import 'package:hyundai_app/screens/notification/notification_page.dart';
 import 'package:hyundai_app/screens/onboarding/onboarding_page.dart';
+import 'package:hyundai_app/screens/partners/detail/partners_detail_page.dart';
 import 'package:hyundai_app/screens/partners/partners_page.dart';
 import 'package:hyundai_app/screens/register/register_page.dart';
 import 'package:hyundai_app/screens/scanner/scanner_page.dart';
@@ -30,6 +31,7 @@ class Screens {
   static const balanceHistory = "/balance/history";
   static const balanceExpiry = "/balance/expiry";
   static const partners = "/partners";
+  static const partnersDetail = "/partners/detail";
   static const challenges = "/challenges";
 }
 
@@ -105,6 +107,15 @@ class RouteModule extends Module {
         ChildRoute(
           Screens.partners,
           child: (context, args) => const PartnersPageScreen(),
+        ),
+        ChildRoute(
+          Screens.partnersDetail,
+          child: (context, args) => PartnersDetailPageScreen(
+            title: PartnersDetailPageType.fromJson(args.data).title,
+            description: PartnersDetailPageType.fromJson(args.data).description,
+            image: PartnersDetailPageType.fromJson(args.data).image,
+            deals: PartnersDetailPageType.fromJson(args.data).deals,
+          ),
         ),
         ChildRoute(
           Screens.challenges,

@@ -36,11 +36,11 @@ class _BalanceExpiryPageScreenState extends State<BalanceExpiryPageScreen> {
               ),
               children: [
                 Container(
-                  padding: const EdgeInsets.only(
-                    left: 16,
-                    top: 0,
-                    right: 16,
-                    bottom: 16,
+                  padding: const EdgeInsets.fromLTRB(
+                    16,
+                    0,
+                    16,
+                    16,
                   ),
                   child: Gap(
                     gap: 8,
