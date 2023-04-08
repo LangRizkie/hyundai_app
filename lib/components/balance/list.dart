@@ -16,12 +16,9 @@ class _ListComponentState extends State<ListComponent> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        margin: const EdgeInsets.only(top: 16),
-        child: SingleChildScrollView(
-          child: Column(
-            children: List.generate(10, (index) => card()),
-          ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: List.generate(10, (index) => card()),
         ),
       ),
     );

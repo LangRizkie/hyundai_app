@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hyundai_app/components/gap.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
-class HeroText extends StatelessWidget {
-  const HeroText({Key? key}) : super(key: key);
+class HeroTextComponent extends StatelessWidget {
+  const HeroTextComponent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

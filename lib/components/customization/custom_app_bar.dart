@@ -5,7 +5,7 @@ import 'package:hyundai_app/modules/route.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const CustomAppBar({
+  CustomAppBar({
     Key? key,
     this.isMain = false,
     this.isTransparent = false,
@@ -13,7 +13,10 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.leadingColor = Colors.black,
     this.overrideBackButton,
     this.actions,
-  })  : preferredSize = const Size.fromHeight(kToolbarHeight),
+    this.bottom,
+  })  : preferredSize = Size.fromHeight(
+          kToolbarHeight + (bottom != null ? bottom.preferredSize.height : 0),
+        ),
         super(key: key);
 
   @override
@@ -24,6 +27,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   final Color? leadingColor;
   final Function()? overrideBackButton;
   final List<Widget>? actions;
+  final PreferredSizeWidget? bottom;
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -60,6 +64,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
         widget.title ?? "",
         style: const TextStyle(
           color: Colors.black,
+          fontWeight: FontWeight.w400,
         ),
       ),
       backgroundColor:
@@ -72,6 +77,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
         onPressed: widget.overrideBackButton ?? () => Modular.to.pop(),
       ),
       actions: widget.actions,
+      bottom: widget.bottom,
     );
   }
 }

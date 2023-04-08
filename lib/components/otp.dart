@@ -38,7 +38,7 @@ class _OTPState extends State<OTP> {
   @override
   Widget build(BuildContext context) {
     return Layout(
-      appBar: const CustomAppBar(
+      appBar: CustomAppBar(
         title: "OTP Code Verification",
       ),
       child: Container(

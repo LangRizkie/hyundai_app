@@ -8,8 +8,8 @@ import 'package:hyundai_app/modules/route.dart';
 import 'package:hyundai_app/modules/theme.dart';
 import 'package:text_divider/text_divider.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({
+class LoginFormComponent extends StatefulWidget {
+  const LoginFormComponent({
     Key? key,
     required this.show,
     required this.onVisibilityPressed,
@@ -21,10 +21,10 @@ class LoginForm extends StatefulWidget {
   final Function() onForgotPasswordPressed;
 
   @override
-  State<LoginForm> createState() => _LoginFormState();
+  State<LoginFormComponent> createState() => _LoginFormComponentState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _LoginFormComponentState extends State<LoginFormComponent> {
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -82,6 +82,7 @@ class _LoginFormState extends State<LoginForm> {
           ),
           CustomButton(
             label: "Login",
+            width: double.infinity,
             textColor: Colors.white,
             buttonColor: Palette.primaryColor,
             onPressed: () {
@@ -107,6 +108,7 @@ class _LoginFormState extends State<LoginForm> {
           ),
           CustomButton(
             label: "Register",
+            width: double.infinity,
             textColor: Colors.white,
             buttonColor: Palette.secondaryColor,
             onPressed: () => Modular.to.pushNamed(Screens.register),

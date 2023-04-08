@@ -1,21 +1,22 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:hyundai_app/modules/generic.dart';
 import 'package:hyundai_app/modules/global.dart';
-import 'package:hyundai_app/screens/balance/balance_expiry_page.dart';
-import 'package:hyundai_app/screens/balance/balance_history_page.dart';
-import 'package:hyundai_app/screens/balance/balance_page.dart';
-import 'package:hyundai_app/screens/challenges/challenges_page.dart';
-import 'package:hyundai_app/screens/forgot/forgot_page.dart';
-import 'package:hyundai_app/screens/forgot/forgot_setup_page.dart';
-import 'package:hyundai_app/screens/homepage/home_page.dart';
-import 'package:hyundai_app/screens/login/login_page.dart';
-import 'package:hyundai_app/screens/notification/notification_page.dart';
-import 'package:hyundai_app/screens/onboarding/onboarding_page.dart';
-import 'package:hyundai_app/screens/partners/detail/partners_detail_page.dart';
-import 'package:hyundai_app/screens/partners/partners_page.dart';
-import 'package:hyundai_app/screens/register/register_page.dart';
-import 'package:hyundai_app/screens/scanner/scanner_page.dart';
-import 'package:hyundai_app/screens/success/success_page.dart';
+import 'package:hyundai_app/view/balance/balance_expiry_page.dart';
+import 'package:hyundai_app/view/balance/balance_history_page.dart';
+import 'package:hyundai_app/view/balance/balance_page.dart';
+import 'package:hyundai_app/view/challenges/challenges_page.dart';
+import 'package:hyundai_app/view/forgot/forgot_page.dart';
+import 'package:hyundai_app/view/forgot/forgot_setup_page.dart';
+import 'package:hyundai_app/view/homepage/home_page.dart';
+import 'package:hyundai_app/view/login/login_page.dart';
+import 'package:hyundai_app/view/my_car/my_car_page.dart';
+import 'package:hyundai_app/view/notification/notification_page.dart';
+import 'package:hyundai_app/view/onboarding/onboarding_page.dart';
+import 'package:hyundai_app/view/partners/detail/partners_detail_page.dart';
+import 'package:hyundai_app/view/partners/partners_page.dart';
+import 'package:hyundai_app/view/register/register_page.dart';
+import 'package:hyundai_app/view/scanner/scanner_page.dart';
+import 'package:hyundai_app/view/success/success_page.dart';
 
 class Screens {
   static const home = "/";
@@ -33,6 +34,7 @@ class Screens {
   static const partners = "/partners";
   static const partnersDetail = "/partners/detail";
   static const challenges = "/challenges";
+  static const myCar = "/my_car";
 }
 
 class AuthGuard extends RouteGuard {
@@ -87,26 +89,32 @@ class RouteModule extends Module {
         ChildRoute(
           Screens.scanner,
           child: (context, args) => const ScannerPageScreen(),
+          guards: [AuthGuard()],
         ),
         ChildRoute(
           Screens.notification,
           child: (context, args) => const NotificationPageScreen(),
+          guards: [AuthGuard()],
         ),
         ChildRoute(
           Screens.balance,
           child: (context, args) => const BalancePageScreen(),
+          guards: [AuthGuard()],
         ),
         ChildRoute(
           Screens.balanceHistory,
           child: (context, args) => const BalanceHistoryPageScreen(),
+          guards: [AuthGuard()],
         ),
         ChildRoute(
           Screens.balanceExpiry,
           child: (context, args) => const BalanceExpiryPageScreen(),
+          guards: [AuthGuard()],
         ),
         ChildRoute(
           Screens.partners,
           child: (context, args) => const PartnersPageScreen(),
+          guards: [AuthGuard()],
         ),
         ChildRoute(
           Screens.partnersDetail,
@@ -116,10 +124,17 @@ class RouteModule extends Module {
             image: PartnersDetailPageType.fromJson(args.data).image,
             deals: PartnersDetailPageType.fromJson(args.data).deals,
           ),
+          guards: [AuthGuard()],
         ),
         ChildRoute(
           Screens.challenges,
           child: (context, args) => const ChallengesPageScreen(),
+          guards: [AuthGuard()],
+        ),
+        ChildRoute(
+          Screens.myCar,
+          child: (context, args) => const MyCarPageScreen(),
+          guards: [AuthGuard()],
         ),
       ];
 }

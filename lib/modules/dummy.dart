@@ -28,7 +28,7 @@ class Dummy {
     },
     {
       "label": "My Car",
-      "route": "",
+      "route": "/my_car",
       "icon": 0xefc6,
     },
   ];

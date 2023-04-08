@@ -44,13 +44,14 @@ class _CustomButtonState extends State<CustomButton> {
 
     if (widget.prefixIcon != null || widget.suffixIcon != null) {
       return SizedBox(
-        width: widget.width ?? double.infinity,
+        width: widget.width,
         child: TextButton.icon(
           onPressed: widget.onPressed,
           style: ButtonStyle(
             padding: MaterialStateProperty.all(
               const EdgeInsets.symmetric(
                 vertical: 14,
+                horizontal: 16,
               ),
             ),
             backgroundColor: MaterialStateProperty.all(
@@ -64,7 +65,7 @@ class _CustomButtonState extends State<CustomButton> {
     }
 
     return SizedBox(
-      width: widget.width ?? double.infinity,
+      width: widget.width,
       child: TextButton(
         onPressed: widget.onPressed,
         style: ButtonStyle(
