@@ -58,7 +58,9 @@ class _OurPartnerComponentState extends State<OurPartnerComponent> {
             height: 144,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage('https://via.placeholder.com/280x144'),
+                image: NetworkImage(
+                  "https://via.placeholder.com/280x144",
+                ),
                 fit: BoxFit.cover,
               ),
             ),

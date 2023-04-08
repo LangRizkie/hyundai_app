@@ -54,6 +54,8 @@ dependencies:
   mobile_scanner: ^3.0.0
   sticky_headers: ^0.3.0+2
   fluttericon: ^2.0.0
+  dotted_border: ^2.0.0+3
+  camera: ^0.10.3+2
 
 dev_dependencies:
   flutter_test:

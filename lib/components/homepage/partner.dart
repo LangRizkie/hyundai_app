@@ -55,7 +55,7 @@ class _PartnerComponentState extends State<PartnerComponent> {
                 backgroundColor: Colors.white,
                 radius: 32,
                 backgroundImage: NetworkImage(
-                  'https://via.placeholder.com/64x64',
+                  "https://via.placeholder.com/64x64",
                 ),
               ),
             ),

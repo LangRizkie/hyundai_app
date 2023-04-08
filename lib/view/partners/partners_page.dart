@@ -65,7 +65,9 @@ class _PartnersPageScreenState extends State<PartnersPageScreen> {
                 height: 160,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage('https://via.placeholder.com/256x160'),
+                    image: NetworkImage(
+                      "https://via.placeholder.com/256x160",
+                    ),
                     fit: BoxFit.cover,
                   ),
                 ),

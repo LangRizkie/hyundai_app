@@ -22,7 +22,12 @@ class _CustomCardCarState extends State<CustomCardCar> {
         Container(
           width: double.infinity,
           margin: EdgeInsets.only(top: overflowHeight),
-          padding: EdgeInsets.fromLTRB(16, extraHeight, 16, 16),
+          padding: EdgeInsets.fromLTRB(
+            16,
+            extraHeight,
+            16,
+            16,
+          ),
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(

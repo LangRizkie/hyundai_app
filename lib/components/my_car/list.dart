@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:hyundai_app/components/customization/custom_button.dart';
 import 'package:hyundai_app/components/customization/custom_card_car.dart';
 import 'package:hyundai_app/components/gap.dart';
 import 'package:hyundai_app/components/my_car/empty.dart';
+import 'package:hyundai_app/modules/route.dart';
 import 'package:hyundai_app/modules/theme.dart';
 
 class MyCarListComponent extends StatefulWidget {
@@ -40,7 +42,8 @@ class _MyCarListComponentState extends State<MyCarListComponent> {
                         label: "Car Detail",
                         textColor: Palette.primaryColor,
                         buttonColor: Colors.white,
-                        onPressed: () {},
+                        onPressed: () =>
+                            Modular.to.pushNamed(Screens.myCarDetail),
                       ),
                     ),
                     Expanded(

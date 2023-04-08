@@ -7,11 +7,17 @@ class CustomBottomSheet extends StatefulWidget {
     Key? key,
     this.title,
     this.isDismissable = true,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.mainAxisSize,
     required this.children,
   }) : super(key: key);
 
   final String? title;
   final bool? isDismissable;
+  final MainAxisAlignment? mainAxisAlignment;
+  final CrossAxisAlignment? crossAxisAlignment;
+  final MainAxisSize? mainAxisSize;
   final List<Widget> children;
 
   @override
@@ -34,6 +40,11 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
       ),
       child: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment:
+              widget.mainAxisAlignment ?? MainAxisAlignment.start,
+          crossAxisAlignment:
+              widget.crossAxisAlignment ?? CrossAxisAlignment.center,
+          mainAxisSize: widget.mainAxisSize ?? MainAxisSize.max,
           children: [
             Container(
               width: double.infinity,

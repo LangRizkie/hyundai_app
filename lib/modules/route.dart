@@ -9,7 +9,9 @@ import 'package:hyundai_app/view/forgot/forgot_page.dart';
 import 'package:hyundai_app/view/forgot/forgot_setup_page.dart';
 import 'package:hyundai_app/view/homepage/home_page.dart';
 import 'package:hyundai_app/view/login/login_page.dart';
+import 'package:hyundai_app/view/my_car/detail/my_car_detail_page.dart';
 import 'package:hyundai_app/view/my_car/my_car_page.dart';
+import 'package:hyundai_app/view/my_car/update/my_car_update_page.dart';
 import 'package:hyundai_app/view/notification/notification_page.dart';
 import 'package:hyundai_app/view/onboarding/onboarding_page.dart';
 import 'package:hyundai_app/view/partners/detail/partners_detail_page.dart';
@@ -35,6 +37,8 @@ class Screens {
   static const partnersDetail = "/partners/detail";
   static const challenges = "/challenges";
   static const myCar = "/my_car";
+  static const myCarDetail = "/my_car/detail";
+  static const myCarUpdate = "/my_car/update";
 }
 
 class AuthGuard extends RouteGuard {
@@ -134,6 +138,16 @@ class RouteModule extends Module {
         ChildRoute(
           Screens.myCar,
           child: (context, args) => const MyCarPageScreen(),
+          guards: [AuthGuard()],
+        ),
+        ChildRoute(
+          Screens.myCarDetail,
+          child: (context, args) => const MyCarDetailPageScreen(),
+          guards: [AuthGuard()],
+        ),
+        ChildRoute(
+          Screens.myCarUpdate,
+          child: (context, args) => const MyCarUpdatePageScreen(),
           guards: [AuthGuard()],
         ),
       ];

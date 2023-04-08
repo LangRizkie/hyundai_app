@@ -67,7 +67,7 @@ class _ChallengesPageScreenState extends State<ChallengesPageScreen> {
           pageBuilder: (ctx, a, b) => DetailPageScreen(
             tag: "challenges detail page $index",
             title: "ISMAYA Group",
-            image: 'https://via.placeholder.com/160x160',
+            image: "https://via.placeholder.com/160x160",
           ),
         ),
       ),
@@ -85,7 +85,9 @@ class _ChallengesPageScreenState extends State<ChallengesPageScreen> {
                 decoration: const BoxDecoration(
                   color: Colors.black12,
                   image: DecorationImage(
-                    image: NetworkImage('https://via.placeholder.com/160x160'),
+                    image: NetworkImage(
+                      "https://via.placeholder.com/160x160",
+                    ),
                     fit: BoxFit.cover,
                   ),
                 ),

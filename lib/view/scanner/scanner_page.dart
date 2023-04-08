@@ -70,7 +70,12 @@ class CenterHolePath extends CustomClipper<Path> {
 
   @override
   Path getClip(Size size) {
-    final rect = Rect.fromLTRB(0, 0, size.width, size.height);
+    final rect = Rect.fromLTRB(
+      0,
+      0,
+      size.width,
+      size.height,
+    );
 
     final path = Path()
       ..fillType = PathFillType.evenOdd

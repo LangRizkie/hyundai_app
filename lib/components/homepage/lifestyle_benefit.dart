@@ -58,7 +58,9 @@ class _LifeStyleBenefitComponentState extends State<LifeStyleBenefitComponent> {
             height: 144,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage('https://via.placeholder.com/146x146'),
+                image: NetworkImage(
+                  "https://via.placeholder.com/146x146",
+                ),
                 fit: BoxFit.cover,
               ),
             ),

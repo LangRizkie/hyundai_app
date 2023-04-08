@@ -160,8 +160,9 @@ class _PartnersDetailPageScreenState extends State<PartnersDetailPageScreen>
                   decoration: const BoxDecoration(
                     color: Colors.black12,
                     image: DecorationImage(
-                      image:
-                          NetworkImage('https://via.placeholder.com/160x160'),
+                      image: NetworkImage(
+                        "https://via.placeholder.com/160x160",
+                      ),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -223,8 +224,9 @@ class _PartnersDetailPageScreenState extends State<PartnersDetailPageScreen>
                   decoration: const BoxDecoration(
                     color: Colors.black12,
                     image: DecorationImage(
-                      image:
-                          NetworkImage('https://via.placeholder.com/160x160'),
+                      image: NetworkImage(
+                        "https://via.placeholder.com/160x160",
+                      ),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -276,13 +278,18 @@ class _PartnersDetailPageScreenState extends State<PartnersDetailPageScreen>
         direction: Axis.vertical,
         children: [
           Expandable(
-            title: "What if the voucher code can't be used used used",
+            title: "What if the voucher code can't be used",
             onPressed: () => setState(
               () => activeIndex = activeIndex != null ? 1 : null,
             ),
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                padding: const EdgeInsets.fromLTRB(
+                  16,
+                  0,
+                  16,
+                  16,
+                ),
                 child: Text(
                   description,
                   style: const TextStyle(
