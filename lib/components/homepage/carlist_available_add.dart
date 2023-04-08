@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/modules/route.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class CarListAvailableAdd extends StatefulWidget {
   const CarListAvailableAdd({Key? key}) : super(key: key);
@@ -13,7 +15,7 @@ class _CarListAvailableAddState extends State<CarListAvailableAdd> {
   @override
   Widget build(BuildContext context) {
     return ScaleTap(
-      onPressed: () {},
+      onPressed: () => Modular.to.pushNamed(Screens.myCar),
       child: Container(
         margin: const EdgeInsets.symmetric(
           horizontal: 16,
@@ -45,7 +47,7 @@ class _CarListAvailableAddState extends State<CarListAvailableAdd> {
                     ),
                   ),
                   Text(
-                    'Add New Car',
+                    "Add New Car",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,

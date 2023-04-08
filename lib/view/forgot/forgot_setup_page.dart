@@ -1,15 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_password_strength/flutter_password_strength.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/components/customization/custom_app_bar.dart';
-import 'package:hyundai_app/components/customization/custom_button.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/components/labeled_textformfield.dart';
-import 'package:hyundai_app/components/layout.dart';
-import 'package:hyundai_app/modules/generic.dart';
-import 'package:hyundai_app/modules/route.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:flutter_password_strength/flutter_password_strength.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/customization/custom_app_bar.dart";
+import "package:hyundai_app/components/customization/custom_button.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/components/labeled_textformfield.dart";
+import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/modules/generic.dart";
+import "package:hyundai_app/modules/route.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class ForgotSetupPageScreen extends StatefulWidget {
   const ForgotSetupPageScreen({

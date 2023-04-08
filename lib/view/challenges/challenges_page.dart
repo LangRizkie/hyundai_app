@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/components/customization/custom_app_bar.dart';
-import 'package:hyundai_app/components/customization/custom_bottomsheet.dart';
-import 'package:hyundai_app/components/customization/custom_list_icon_button.dart';
-import 'package:hyundai_app/components/input_dropdown.dart';
-import 'package:hyundai_app/components/layout.dart';
-import 'package:hyundai_app/modules/theme.dart';
-import 'package:hyundai_app/view/detail/detail_page.dart';
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/customization/custom_app_bar.dart";
+import "package:hyundai_app/components/customization/custom_bottomsheet.dart";
+import "package:hyundai_app/components/customization/custom_list_icon_button.dart";
+import "package:hyundai_app/components/input_dropdown.dart";
+import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/modules/theme.dart";
+import "package:hyundai_app/view/detail/detail_page.dart";
 
 class ChallengesPageScreen extends StatefulWidget {
   const ChallengesPageScreen({super.key});

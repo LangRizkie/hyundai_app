@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class CustomProgress extends StatefulWidget {
   const CustomProgress({

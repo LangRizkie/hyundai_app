@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/modules/theme.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:hyundai_app/components/customization/custom_app_bar.dart';
-import 'package:hyundai_app/components/layout.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/modules/theme.dart";
+import "package:mobile_scanner/mobile_scanner.dart";
+import "package:hyundai_app/components/customization/custom_app_bar.dart";
+import "package:hyundai_app/components/layout.dart";
 
 class ScannerPageScreen extends StatefulWidget {
   const ScannerPageScreen({super.key});

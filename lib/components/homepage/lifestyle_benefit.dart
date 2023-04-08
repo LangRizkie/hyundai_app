@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:hyundai_app/components/title_route.dart';
-import 'package:hyundai_app/modules/route.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:hyundai_app/components/title_route.dart";
+import "package:hyundai_app/modules/route.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class LifeStyleBenefitComponent extends StatefulWidget {
   const LifeStyleBenefitComponent({Key? key}) : super(key: key);

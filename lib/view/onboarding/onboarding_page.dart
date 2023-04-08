@@ -1,13 +1,13 @@
-import 'package:card_swiper/card_swiper.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:hyundai_app/components/customization/custom_dropdown.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/components/layout.dart';
-import 'package:hyundai_app/modules/dummy.dart';
-import 'package:hyundai_app/modules/generic.dart';
-import 'package:hyundai_app/modules/route.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:card_swiper/card_swiper.dart";
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:hyundai_app/components/customization/custom_dropdown.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/modules/dummy.dart";
+import "package:hyundai_app/modules/generic.dart";
+import "package:hyundai_app/modules/route.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class OnBoardingPageScreen extends StatefulWidget {
   const OnBoardingPageScreen({Key? key}) : super(key: key);

@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:hyundai_app/components/customization/custom_app_bar.dart';
-import 'package:hyundai_app/components/customization/custom_button.dart';
-import 'package:hyundai_app/components/labeled_textformfield.dart';
-import 'package:hyundai_app/components/layout.dart';
-import 'package:hyundai_app/components/otp.dart';
-import 'package:hyundai_app/modules/global.dart';
-import 'package:hyundai_app/modules/route.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:hyundai_app/components/customization/custom_app_bar.dart";
+import "package:hyundai_app/components/customization/custom_button.dart";
+import "package:hyundai_app/components/labeled_textformfield.dart";
+import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/components/otp.dart";
+import "package:hyundai_app/modules/global.dart";
+import "package:hyundai_app/modules/route.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class ForgotPageScreen extends StatefulWidget {
   const ForgotPageScreen({

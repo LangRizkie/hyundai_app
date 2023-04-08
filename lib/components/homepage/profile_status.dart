@@ -1,10 +1,10 @@
-import 'package:bulleted_list/bulleted_list.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/components/customization/custom_bottomsheet.dart';
-import 'package:hyundai_app/modules/route.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:bulleted_list/bulleted_list.dart";
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/customization/custom_bottomsheet.dart";
+import "package:hyundai_app/modules/route.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class ProfileStatus extends StatefulWidget {
   const ProfileStatus({
@@ -34,15 +34,15 @@ class _ProfileStatusState extends State<ProfileStatus> {
             card(
               prefixIcon: Icons.contacts_outlined,
               suffixIcon: Icons.info_outline_rounded,
-              title: 'Member',
-              value: 'Blue +',
+              title: "Member",
+              value: "Blue +",
               onPressed: onPressedMember,
             ),
             card(
               prefixIcon: Icons.blur_circular,
               suffixIcon: Icons.chevron_right,
-              title: 'Coins',
-              value: '500.000',
+              title: "Coins",
+              value: "500.000",
               onPressed: () => Modular.to.pushNamed(Screens.balance),
             ),
           ],
@@ -99,7 +99,7 @@ class _ProfileStatusState extends State<ProfileStatus> {
                               ),
                             ),
                             Text(
-                              value ?? '-',
+                              value ?? "-",
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
                                 color: Palette.primaryColor,

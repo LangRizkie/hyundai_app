@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/components/input_dropdown.dart';
-import 'package:hyundai_app/components/labeled_textformfield.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/components/input_dropdown.dart";
+import "package:hyundai_app/components/labeled_textformfield.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class RegisterSecondStepScreen extends StatefulWidget {
   const RegisterSecondStepScreen({Key? key}) : super(key: key);
@@ -86,15 +86,15 @@ class _RegisterSecondStepScreenState extends State<RegisterSecondStepScreen> {
                           ),
                           children: [
                             TextSpan(
-                              text: 'Terms & Condition',
+                              text: "Terms & Condition",
                               style: TextStyle(color: Palette.secondaryColor),
                             ),
-                            TextSpan(text: ' and '),
+                            TextSpan(text: " and "),
                             TextSpan(
-                              text: 'Privacy Policy',
+                              text: "Privacy Policy",
                               style: TextStyle(color: Palette.secondaryColor),
                             ),
-                            TextSpan(text: ' MyHyundai Indonesia'),
+                            TextSpan(text: " MyHyundai Indonesia"),
                           ],
                         ),
                       ),

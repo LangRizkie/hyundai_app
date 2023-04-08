@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/components/customization/custom_app_bar.dart';
-import 'package:hyundai_app/components/customization/custom_button.dart';
-import 'package:hyundai_app/components/expandable.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/components/layout.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/components/customization/custom_app_bar.dart";
+import "package:hyundai_app/components/customization/custom_button.dart";
+import "package:hyundai_app/components/expandable.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class PartnersDetailPageScreen extends StatefulWidget {
   const PartnersDetailPageScreen({
@@ -268,7 +268,7 @@ class _PartnersDetailPageScreenState extends State<PartnersDetailPageScreen>
     String description = [
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
       "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,",
-      "as opposed to using 'Content here, content here', making it look like readable English.",
+      "as opposed to using "Content here, content here", making it look like readable English.",
     ].join(" ");
 
     return Padding(
@@ -278,7 +278,7 @@ class _PartnersDetailPageScreenState extends State<PartnersDetailPageScreen>
         direction: Axis.vertical,
         children: [
           Expandable(
-            title: "What if the voucher code can't be used",
+            title: "What if the voucher code can"t be used",
             onPressed: () => setState(
               () => activeIndex = activeIndex != null ? 1 : null,
             ),

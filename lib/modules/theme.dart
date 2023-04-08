@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class Palette {
   static const Color primaryColor = Color(0xFF002C5F);
@@ -8,8 +8,8 @@ class Palette {
 }
 
 class Constant {
-  static const fontFamilyHead = 'HyundaiSansHead';
-  static const fontFamilyText = 'HyundaiSansText';
+  static const fontFamilyHead = "HyundaiSansHead";
+  static const fontFamilyText = "HyundaiSansText";
 }
 
 class CustomTheme {

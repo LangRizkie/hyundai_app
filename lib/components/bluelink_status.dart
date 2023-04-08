@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class BlueLinkStatus extends StatefulWidget {
   const BlueLinkStatus({
@@ -19,7 +19,7 @@ class _BlueLinkStatusState extends State<BlueLinkStatus> {
 
   @override
   void initState() {
-    status = widget.isConnected ? 'Connected' : 'Unconnected';
+    status = widget.isConnected ? "Connected" : "Unconnected";
     color =
         widget.isConnected ? Palette.secondaryColor : Colors.blueGrey.shade200;
 

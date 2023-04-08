@@ -1,16 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:hyundai_app/components/customization/custom_app_bar.dart';
-import 'package:hyundai_app/components/customization/custom_button.dart';
-import 'package:hyundai_app/components/customization/custom_progress.dart';
-import 'package:hyundai_app/components/layout.dart';
-import 'package:hyundai_app/components/otp.dart';
-import 'package:hyundai_app/modules/generic.dart';
-import 'package:hyundai_app/modules/global.dart';
-import 'package:hyundai_app/modules/route.dart';
-import 'package:hyundai_app/modules/theme.dart';
-import 'package:hyundai_app/view/register/register_first_step.dart';
-import 'package:hyundai_app/view/register/register_second_step.dart';
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:hyundai_app/components/customization/custom_app_bar.dart";
+import "package:hyundai_app/components/customization/custom_button.dart";
+import "package:hyundai_app/components/customization/custom_progress.dart";
+import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/components/otp.dart";
+import "package:hyundai_app/modules/generic.dart";
+import "package:hyundai_app/modules/global.dart";
+import "package:hyundai_app/modules/route.dart";
+import "package:hyundai_app/modules/theme.dart";
+import "package:hyundai_app/view/register/register_first_step.dart";
+import "package:hyundai_app/view/register/register_second_step.dart";
 
 class RegisterPageScreen extends StatefulWidget {
   const RegisterPageScreen({Key? key}) : super(key: key);

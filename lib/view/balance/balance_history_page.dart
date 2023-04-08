@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/components/customization/custom_app_bar.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/components/layout.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/customization/custom_app_bar.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class BalanceHistoryPageScreen extends StatefulWidget {
   const BalanceHistoryPageScreen({super.key});

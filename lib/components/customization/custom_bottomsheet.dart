@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
 
 class CustomBottomSheet extends StatefulWidget {
   const CustomBottomSheet({

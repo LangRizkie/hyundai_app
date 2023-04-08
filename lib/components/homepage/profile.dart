@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/components/homepage/profile_data.dart';
-import 'package:hyundai_app/components/homepage/profile_status.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/components/homepage/profile_data.dart";
+import "package:hyundai_app/components/homepage/profile_status.dart";
 
 class ProfileComponent extends StatefulWidget {
   const ProfileComponent({Key? key}) : super(key: key);

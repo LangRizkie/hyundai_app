@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
+import "package:flutter/material.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
 
 class Expandable extends StatefulWidget {
   const Expandable({

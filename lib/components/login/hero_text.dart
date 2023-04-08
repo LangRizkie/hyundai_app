@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class HeroTextComponent extends StatelessWidget {
   const HeroTextComponent({Key? key}) : super(key: key);

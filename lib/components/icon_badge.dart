@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:badges/badges.dart' as badges;
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:badges/badges.dart" as badges;
+import "package:hyundai_app/modules/theme.dart";
 
 class IconBadge extends StatefulWidget {
   const IconBadge({

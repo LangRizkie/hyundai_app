@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class Percentage extends StatefulWidget {
   const Percentage({
@@ -30,7 +30,7 @@ class _PercentageState extends State<Percentage> {
             ),
           ),
           const TextSpan(
-            text: '%',
+            text: "%",
           )
         ],
       ),

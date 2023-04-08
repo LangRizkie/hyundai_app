@@ -1,5 +1,5 @@
-import 'package:card_swiper/card_swiper.dart';
-import 'package:flutter/material.dart';
+import "package:card_swiper/card_swiper.dart";
+import "package:flutter/material.dart";
 
 class AdvertisementComponent extends StatefulWidget {
   const AdvertisementComponent({Key? key}) : super(key: key);

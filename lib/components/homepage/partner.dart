@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/modules/helper.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/modules/helper.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class PartnerComponent extends StatefulWidget {
   const PartnerComponent({Key? key}) : super(key: key);
@@ -68,7 +68,7 @@ class _PartnerComponentState extends State<PartnerComponent> {
                 ),
                 color: Palette.secondaryColor,
                 child: const Text(
-                  'New',
+                  "New",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -80,7 +80,7 @@ class _PartnerComponentState extends State<PartnerComponent> {
           ],
         ),
         Text(
-          Helper.breakTwoWords('Hyundai Indonesia'),
+          Helper.breakTwoWords("Hyundai Indonesia"),
           textAlign: TextAlign.center,
           style: const TextStyle(
             fontSize: 12,

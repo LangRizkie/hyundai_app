@@ -1,12 +1,12 @@
-import 'package:card_swiper/card_swiper.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/components/title_route.dart';
-import 'package:hyundai_app/modules/dummy.dart';
-import 'package:hyundai_app/modules/generic.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:card_swiper/card_swiper.dart";
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/components/title_route.dart";
+import "package:hyundai_app/modules/dummy.dart";
+import "package:hyundai_app/modules/generic.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class ServicesComponent extends StatefulWidget {
   const ServicesComponent({Key? key}) : super(key: key);

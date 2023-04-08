@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/components/title_route.dart';
-import 'package:hyundai_app/modules/route.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/components/title_route.dart";
+import "package:hyundai_app/modules/route.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class OurPartnerComponent extends StatefulWidget {
   const OurPartnerComponent({Key? key}) : super(key: key);

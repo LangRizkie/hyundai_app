@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/components/customization/custom_app_bar.dart';
-import 'package:hyundai_app/components/layout.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/components/customization/custom_app_bar.dart";
+import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class NotificationPageScreen extends StatefulWidget {
   const NotificationPageScreen({super.key});

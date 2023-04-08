@@ -1,10 +1,10 @@
-import 'package:card_swiper/card_swiper.dart';
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/components/title_route.dart';
-import 'package:hyundai_app/modules/dummy.dart';
-import 'package:hyundai_app/modules/generic.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:card_swiper/card_swiper.dart";
+import "package:flutter/material.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/components/title_route.dart";
+import "package:hyundai_app/modules/dummy.dart";
+import "package:hyundai_app/modules/generic.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class PartnerDealsComponent extends StatefulWidget {
   const PartnerDealsComponent({Key? key}) : super(key: key);

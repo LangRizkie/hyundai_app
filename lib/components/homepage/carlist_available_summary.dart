@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/components/bluelink_status.dart';
-import 'package:hyundai_app/components/percentage.dart';
-import 'package:hyundai_app/modules/generic.dart';
-import 'package:hyundai_app/modules/theme.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
+import "package:flutter/material.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/bluelink_status.dart";
+import "package:hyundai_app/components/percentage.dart";
+import "package:hyundai_app/modules/generic.dart";
+import "package:hyundai_app/modules/theme.dart";
+import "package:step_progress_indicator/step_progress_indicator.dart";
 
 class CarListAvailableSummary extends StatefulWidget {
   const CarListAvailableSummary({
@@ -81,7 +81,7 @@ class _CarListAvailableSummaryState extends State<CarListAvailableSummary> {
                                         bottom: 4,
                                       ),
                                       child: const Text(
-                                        'Ioniq 5',
+                                        "Ioniq 5",
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                           fontSize: 18,
@@ -95,7 +95,7 @@ class _CarListAvailableSummaryState extends State<CarListAvailableSummary> {
                                       spacing: 8,
                                       children: const [
                                         Text(
-                                          'Bluelink',
+                                          "Bluelink",
                                           style: TextStyle(
                                             fontSize: 12,
                                           ),

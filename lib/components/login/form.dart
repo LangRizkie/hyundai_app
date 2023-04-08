@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/components/customization/custom_button.dart';
-import 'package:hyundai_app/components/labeled_textformfield.dart';
-import 'package:hyundai_app/modules/global.dart';
-import 'package:hyundai_app/modules/route.dart';
-import 'package:hyundai_app/modules/theme.dart';
-import 'package:text_divider/text_divider.dart';
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/customization/custom_button.dart";
+import "package:hyundai_app/components/labeled_textformfield.dart";
+import "package:hyundai_app/modules/global.dart";
+import "package:hyundai_app/modules/route.dart";
+import "package:hyundai_app/modules/theme.dart";
+import "package:text_divider/text_divider.dart";
 
 class LoginFormComponent extends StatefulWidget {
   const LoginFormComponent({
@@ -103,7 +103,7 @@ class _LoginFormComponentState extends State<LoginFormComponent> {
             ),
             child: TextDivider.horizontal(
               thickness: 1,
-              text: const Text('Not a member?'),
+              text: const Text("Not a member?"),
             ),
           ),
           CustomButton(

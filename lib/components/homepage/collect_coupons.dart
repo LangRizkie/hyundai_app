@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/components/customization/custom_list_icon_button.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/components/customization/custom_list_icon_button.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class CollectCouponComponent extends StatefulWidget {
   const CollectCouponComponent({Key? key}) : super(key: key);

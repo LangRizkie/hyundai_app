@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/components/bluelink_status.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/bluelink_status.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class CarListEmpty extends StatefulWidget {
   const CarListEmpty({Key? key}) : super(key: key);
@@ -62,7 +62,7 @@ class _CarListEmptyState extends State<CarListEmpty> {
                                     bottom: 4,
                                   ),
                                   child: const Text(
-                                    'Car not found',
+                                    "Car not found",
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       fontSize: 18,
@@ -75,7 +75,7 @@ class _CarListEmptyState extends State<CarListEmpty> {
                                   spacing: 8,
                                   children: const [
                                     Text(
-                                      'Bluelink',
+                                      "Bluelink",
                                       style: TextStyle(
                                         fontSize: 12,
                                       ),
@@ -112,7 +112,7 @@ class _CarListEmptyState extends State<CarListEmpty> {
                           color: Palette.primaryColor,
                         ),
                         Text(
-                          'Add Car',
+                          "Add Car",
                           style: TextStyle(
                             fontSize: 10,
                           ),

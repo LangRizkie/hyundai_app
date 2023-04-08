@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class ProfileData extends StatefulWidget {
   const ProfileData({
@@ -69,7 +69,7 @@ class _ProfileDataState extends State<ProfileData> {
   CircleAvatar picture() {
     return const CircleAvatar(
       backgroundColor: Palette.secondaryColor,
-      child: Text('GR'),
+      child: Text("GR"),
     );
   }
 
@@ -83,7 +83,7 @@ class _ProfileDataState extends State<ProfileData> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Hi! Good morning,',
+              "Hi! Good morning,",
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 12,
@@ -94,7 +94,7 @@ class _ProfileDataState extends State<ProfileData> {
                 vertical: 4,
               ),
               child: const Text(
-                'Gilang Rizkie',
+                "Gilang Rizkie",
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 20,
@@ -103,7 +103,7 @@ class _ProfileDataState extends State<ProfileData> {
               ),
             ),
             const Text(
-              'Member ID: 12345AB',
+              "Member ID: 12345AB",
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 12,

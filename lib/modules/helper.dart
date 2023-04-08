@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class Helper {
   static Function(String value) breakTwoWords =
-      (value) => value.split(' ').sublist(0, 2).join('\n');
+      (value) => value.split(" ").sublist(0, 2).join("\n");
 }
 
 class ScrollBehaviorModified extends ScrollBehavior {

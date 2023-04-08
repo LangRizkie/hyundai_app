@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:hyundai_app/components/balance/summary.dart';
-import 'package:hyundai_app/components/filter.dart';
-import 'package:hyundai_app/components/balance/list.dart';
-import 'package:hyundai_app/components/customization/custom_app_bar.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/components/layout.dart';
-import 'package:hyundai_app/modules/route.dart';
+import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
+import "package:hyundai_app/components/balance/summary.dart";
+import "package:hyundai_app/components/filter.dart";
+import "package:hyundai_app/components/balance/list.dart";
+import "package:hyundai_app/components/customization/custom_app_bar.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/modules/route.dart";
 
 class BalancePageScreen extends StatefulWidget {
   const BalancePageScreen({super.key});

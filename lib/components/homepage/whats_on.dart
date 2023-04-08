@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/components/title_route.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/components/title_route.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class WhatsOnComponent extends StatefulWidget {
   const WhatsOnComponent({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class _WhatsOnComponentState extends State<WhatsOnComponent> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const TitleRoute(
-          title: "What's On",
+          title: "What"s On",
           description: "See the latest promo from Hyundai",
           fontSize: 20,
           action: true,

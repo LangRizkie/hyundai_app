@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class CustomCardCar extends StatefulWidget {
   const CustomCardCar({super.key, this.child, this.image});

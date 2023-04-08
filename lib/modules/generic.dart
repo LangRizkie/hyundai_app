@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class TitlePageType {
   String title;
@@ -8,11 +8,11 @@ class TitlePageType {
   });
 
   factory TitlePageType.fromJson(Map<String, dynamic> json) => TitlePageType(
-        title: json['title'],
+        title: json["title"],
       );
 
   Map<String, dynamic> toJson() => {
-        'title': title,
+        "title": title,
       };
 }
 
@@ -28,15 +28,15 @@ class MenuType {
   });
 
   factory MenuType.fromJson(Map<String, dynamic> json) => MenuType(
-        label: json['label'],
-        route: json['route'],
-        icon: json['icon'],
+        label: json["label"],
+        route: json["route"],
+        icon: json["icon"],
       );
 
   Map<String, dynamic> toJson() => {
-        'label': label,
-        'route': route,
-        'icon': icon,
+        "label": label,
+        "route": route,
+        "icon": icon,
       };
 }
 
@@ -50,13 +50,13 @@ class ResultPageType {
   });
 
   factory ResultPageType.fromJson(Map<String, dynamic> json) => ResultPageType(
-        title: json['title'],
-        description: json['description'],
+        title: json["title"],
+        description: json["description"],
       );
 
   Map<String, dynamic> toJson() => {
-        'title': title,
-        'description': description,
+        "title": title,
+        "description": description,
       };
 }
 
@@ -75,17 +75,17 @@ class PartnersDetailPageType {
 
   factory PartnersDetailPageType.fromJson(Map<String, dynamic> json) =>
       PartnersDetailPageType(
-        title: json['title'],
-        description: json['description'],
-        image: json['image'],
-        deals: json['deals'],
+        title: json["title"],
+        description: json["description"],
+        image: json["image"],
+        deals: json["deals"],
       );
 
   Map<String, dynamic> toJson() => {
-        'title': title,
-        'description': description,
-        'image': image,
-        'deals': deals,
+        "title": title,
+        "description": description,
+        "image": image,
+        "deals": deals,
       };
 }
 
@@ -99,13 +99,13 @@ class ListType {
   });
 
   factory ListType.fromJson(Map<String, dynamic> json) => ListType(
-        label: json['label'],
-        value: json['value'],
+        label: json["label"],
+        value: json["value"],
       );
 
   Map<String, dynamic> toJson() => {
-        'label': label,
-        'value': value,
+        "label": label,
+        "value": value,
       };
 }
 
@@ -120,13 +120,13 @@ class CarListSummaryType {
 
   factory CarListSummaryType.fromJson(Map<String, dynamic> json) =>
       CarListSummaryType(
-        percentage: json['percentage'],
-        isElectricVehicle: json['isElectricVehicle'],
+        percentage: json["percentage"],
+        isElectricVehicle: json["isElectricVehicle"],
       );
 
   Map<String, dynamic> toJson() => {
-        'percentage': percentage,
-        'isElectricVehicle': isElectricVehicle,
+        "percentage": percentage,
+        "isElectricVehicle": isElectricVehicle,
       };
 }
 
@@ -141,12 +141,12 @@ class HyundaiServicesType {
 
   factory HyundaiServicesType.fromJson(Map<String, dynamic> json) =>
       HyundaiServicesType(
-        icon: json['icon'],
-        name: json['name'],
+        icon: json["icon"],
+        name: json["name"],
       );
 
   Map<String, dynamic> toJson() => {
-        'icon': icon,
-        'name': name,
+        "icon": icon,
+        "name": name,
       };
 }

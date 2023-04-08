@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class TitleRoute extends StatefulWidget {
   const TitleRoute({
@@ -49,7 +49,7 @@ class _TitleRouteState extends State<TitleRoute> {
                     spacing: 2,
                     children: const [
                       Text(
-                        'See All',
+                        "See All",
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,

@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/components/customization/custom_bottomsheet.dart';
-import 'package:hyundai_app/components/customization/custom_button.dart';
-import 'package:hyundai_app/components/customization/custom_card_car.dart';
-import 'package:hyundai_app/components/filter.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/components/my_car/empty.dart';
-import 'package:hyundai_app/components/tag.dart';
-import 'package:hyundai_app/modules/global.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/customization/custom_bottomsheet.dart";
+import "package:hyundai_app/components/customization/custom_button.dart";
+import "package:hyundai_app/components/customization/custom_card_car.dart";
+import "package:hyundai_app/components/filter.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/components/my_car/empty.dart";
+import "package:hyundai_app/components/tag.dart";
+import "package:hyundai_app/modules/global.dart";
+import "package:hyundai_app/modules/theme.dart";
 
 class MyCarStatusComponent extends StatefulWidget {
   const MyCarStatusComponent({

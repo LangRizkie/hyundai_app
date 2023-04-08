@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_countdown_timer/index.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:hyundai_app/components/gap.dart';
-import 'package:hyundai_app/components/layout.dart';
-import 'package:hyundai_app/modules/global.dart';
-import 'package:hyundai_app/modules/theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_countdown_timer/index.dart";
+import "package:flutter_otp_text_field/flutter_otp_text_field.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/modules/global.dart";
+import "package:hyundai_app/modules/theme.dart";
 
-import 'customization/custom_app_bar.dart';
+import "customization/custom_app_bar.dart";
 
 class OTP extends StatefulWidget {
   const OTP({
@@ -63,12 +63,12 @@ class _OTPState extends State<OTP> {
                 ),
                 children: [
                   TextSpan(
-                    text: 'mut********@gmail.com.',
+                    text: "mut********@gmail.com.",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   TextSpan(
                     text:
-                        ' Please check your inbox and copy the OTP Code here.',
+                        " Please check your inbox and copy the OTP Code here.",
                   ),
                 ],
               ),
@@ -98,7 +98,7 @@ class _OTPState extends State<OTP> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            "Didn't receive OTP code?",
+                            "Didn"t receive OTP code?",
                             style: TextStyle(
                               fontFamily: Constant.fontFamilyText,
                               fontSize: 14,
