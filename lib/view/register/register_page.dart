@@ -58,49 +58,52 @@ class _RegisterPageScreenState extends State<RegisterPageScreen>
           return Modular.to.pop();
         },
       ),
-      child: Stack(
-        children: [
-          TabBarView(
-            controller: tabController,
-            physics: const NeverScrollableScrollPhysics(),
-            children: const [
-              RegisterFirstStepScreen(),
-              RegisterSecondStepScreen(),
-            ],
-          ),
-          Positioned(
-            bottom: 0,
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                children: [
-                  CustomProgress(
-                    value: currentStep,
-                  ),
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 8,
-                      horizontal: 16,
+      child: SafeArea(
+        top: false,
+        child: Stack(
+          children: [
+            TabBarView(
+              controller: tabController,
+              physics: const NeverScrollableScrollPhysics(),
+              children: const [
+                RegisterFirstStepScreen(),
+                RegisterSecondStepScreen(),
+              ],
+            ),
+            Positioned(
+              bottom: 0,
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  children: [
+                    CustomProgress(
+                      value: currentStep,
                     ),
-                    color: Colors.white,
-                    child: Center(
-                      child: CustomButton(
-                        label: tabController.index < tabController.length - 1
-                            ? "Next"
-                            : "Sign Up",
-                        width: double.infinity,
-                        textColor: Colors.white,
-                        buttonColor: Palette.primaryColor,
-                        onPressed: onNextPressed,
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 8,
+                        horizontal: 16,
+                      ),
+                      color: Colors.white,
+                      child: Center(
+                        child: CustomButton(
+                          label: tabController.index < tabController.length - 1
+                              ? "Next"
+                              : "Sign Up",
+                          width: double.infinity,
+                          textColor: Colors.white,
+                          buttonColor: Palette.primaryColor,
+                          onPressed: onNextPressed,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -120,26 +123,31 @@ class _RegisterPageScreenState extends State<RegisterPageScreen>
       context: context,
       backgroundColor: Colors.transparent,
       enableDrag: false,
-      useSafeArea: true,
       isScrollControlled: true,
-      builder: (context) => OTP(
-        onSubmit: (value) {
-          Global.loadingOverlay(
-            context,
-            text: "Please wait, validate OTP Code",
-          );
-          Future.delayed(const Duration(seconds: 2)).then((value) {
-            Modular.to.pop();
-            Modular.to.pop();
-            Modular.to.navigate(
-              Screens.success,
-              arguments: ResultPageType(
-                title: "Registration Successfully",
-                description: "Login now to continue using the application",
-              ).toJson(),
+      builder: (context) => SafeArea(
+        minimum: const EdgeInsets.only(
+          top: kToolbarHeight,
+        ),
+        bottom: false,
+        child: OTP(
+          onSubmit: (value) {
+            Global.loadingOverlay(
+              context,
+              text: "Please wait, validate OTP Code",
             );
-          });
-        },
+            Future.delayed(const Duration(seconds: 2)).then((value) {
+              Modular.to.pop();
+              Modular.to.pop();
+              Modular.to.navigate(
+                Screens.success,
+                arguments: ResultPageType(
+                  title: "Registration Successfully",
+                  description: "Login now to continue using the application",
+                ).toJson(),
+              );
+            });
+          },
+        ),
       ),
     );
   }

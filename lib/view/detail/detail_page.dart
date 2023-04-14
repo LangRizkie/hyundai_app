@@ -105,10 +105,10 @@ class _DetailPageScreenState extends State<DetailPageScreen>
                     controller: tabController,
                     children: const [
                       Center(
-                        child: Text("It"s cloudy here"),
+                        child: Text("It's cloudy here"),
                       ),
                       Center(
-                        child: Text("It"s rainy here"),
+                        child: Text("It's rainy here"),
                       ),
                     ],
                   ),
@@ -128,16 +128,23 @@ class _DetailPageScreenState extends State<DetailPageScreen>
       builder: (BuildContext context, BoxConstraints constraints) {
         top = constraints.biggest.height;
 
+        double opacity = double.parse(
+          ((top - maxExtent) / (minExtent - maxExtent).abs())
+              .toStringAsFixed(2),
+        );
+
+        double opacityValue = opacity > 1
+            ? 1
+            : opacity < 0
+                ? 0
+                : opacity;
+
         return FlexibleSpaceBar(
           centerTitle: true,
           expandedTitleScale: 1,
           stretchModes: const [StretchMode.blurBackground],
           title: AnimatedOpacity(
-            opacity: double.parse(
-              ((constraints.biggest.height - maxExtent) /
-                      (minExtent - maxExtent))
-                  .toStringAsFixed(2),
-            ),
+            opacity: opacityValue,
             duration: const Duration(milliseconds: 100),
             child: Text(
               widget.title,
@@ -177,12 +184,20 @@ class _DetailPageScreenState extends State<DetailPageScreen>
     if (top <= 0) top = expandedHeight + 30;
     if (opacity < 0) opacity = 1;
 
+    double opacityValue = opacity > 1
+        ? 1
+        : opacity < 0
+            ? 0
+            : shrink
+                ? 0
+                : opacity;
+
     return Visibility(
       visible: opacity > 0,
       child: Positioned(
         top: top - 30,
         child: AnimatedOpacity(
-          opacity: opacity,
+          opacity: opacityValue,
           duration: const Duration(milliseconds: 100),
           child: Container(
             alignment: Alignment.center,

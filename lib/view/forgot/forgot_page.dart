@@ -95,20 +95,25 @@ class _ForgotPageScreenState extends State<ForgotPageScreen> {
       context: context,
       backgroundColor: Colors.transparent,
       enableDrag: false,
-      useSafeArea: true,
       isScrollControlled: true,
-      builder: (context) => OTP(
-        onSubmit: (value) {
-          Global.loadingOverlay(
-            context,
-            text: "Please wait, validate OTP Code",
-          );
-          Future.delayed(const Duration(seconds: 2)).then((value) {
-            Modular.to.pop();
-            Modular.to.pop();
-            Modular.to.pushNamed(Screens.forgotSetup);
-          });
-        },
+      builder: (context) => SafeArea(
+        minimum: const EdgeInsets.only(
+          top: kToolbarHeight,
+        ),
+        bottom: false,
+        child: OTP(
+          onSubmit: (value) {
+            Global.loadingOverlay(
+              context,
+              text: "Please wait, validate OTP Code",
+            );
+            Future.delayed(const Duration(seconds: 2)).then((value) {
+              Modular.to.pop();
+              Modular.to.pop();
+              Modular.to.pushNamed(Screens.forgotSetup);
+            });
+          },
+        ),
       ),
     );
   }

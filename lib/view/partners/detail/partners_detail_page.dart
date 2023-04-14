@@ -268,7 +268,7 @@ class _PartnersDetailPageScreenState extends State<PartnersDetailPageScreen>
     String description = [
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
       "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,",
-      "as opposed to using "Content here, content here", making it look like readable English.",
+      'as opposed to using "Content here, content here", making it look like readable English.',
     ].join(" ");
 
     return Padding(
@@ -278,7 +278,7 @@ class _PartnersDetailPageScreenState extends State<PartnersDetailPageScreen>
         direction: Axis.vertical,
         children: [
           Expandable(
-            title: "What if the voucher code can"t be used",
+            title: "What if the voucher code can't be used",
             onPressed: () => setState(
               () => activeIndex = activeIndex != null ? 1 : null,
             ),

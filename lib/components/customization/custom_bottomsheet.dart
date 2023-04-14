@@ -29,7 +29,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        bottom: MediaQuery.of(context).viewInsets.bottom,
+        bottom: MediaQuery.of(context).viewPadding.bottom,
       ),
       decoration: const BoxDecoration(
         color: Colors.white,

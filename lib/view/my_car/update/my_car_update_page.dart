@@ -1,4 +1,3 @@
-import "package:camera/camera.dart";
 import "package:dotted_border/dotted_border.dart";
 import "package:flutter/material.dart";
 import "package:flutter_modular/flutter_modular.dart";
@@ -29,7 +28,7 @@ class _MyCarUpdatePageScreenState extends State<MyCarUpdatePageScreen> {
     return Layout(
       canRefresh: false,
       appBar: CustomAppBar(
-        title: "Update Data STNK/STCK",
+        title: "Update Data STNK/SKCK",
       ),
       child: SingleChildScrollView(
         child: Container(

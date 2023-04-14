@@ -123,6 +123,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   ),
                   CustomButton(
                     label: "Validate",
+                    width: double.infinity,
                     textColor: Colors.white,
                     buttonColor: Palette.primaryColor,
                     onPressed: () {},
