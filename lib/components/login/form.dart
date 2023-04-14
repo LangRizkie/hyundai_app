@@ -25,6 +25,11 @@ class LoginFormComponent extends StatefulWidget {
 }
 
 class _LoginFormComponentState extends State<LoginFormComponent> {
+  final snackbar = const SnackBar(
+    content: Text("Successfully Logged In!"),
+    backgroundColor: Colors.green,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -93,7 +98,11 @@ class _LoginFormComponentState extends State<LoginFormComponent> {
               );
               Future.delayed(const Duration(seconds: 2)).then((value) {
                 Modular.to.pop();
-                Modular.to.navigate(Screens.home);
+                ScaffoldMessenger.of(context).showSnackBar(snackbar);
+
+                Future.delayed(const Duration(seconds: 2)).then((value) {
+                  Modular.to.navigate(Screens.home);
+                });
               });
             },
           ),

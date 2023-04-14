@@ -24,6 +24,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
     return DropdownButtonHideUnderline(
       child: DropdownButton2(
         isExpanded: true,
+        enableFeedback: true,
         value: widget.value,
         items: widget.items
             .map(
@@ -41,7 +42,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
         onChanged: (value) => widget.onChanged!(value.toString()),
         buttonStyleData: const ButtonStyleData(
           height: 40,
-          width: 112,
+          width: 130,
           padding: EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -51,10 +52,13 @@ class _CustomDropdownState extends State<CustomDropdown> {
           icon: Icon(
             Icons.keyboard_arrow_down,
           ),
+          openMenuIcon: Icon(
+            Icons.keyboard_arrow_up,
+          ),
           iconSize: 18,
         ),
         dropdownStyleData: const DropdownStyleData(
-          width: 112,
+          width: 130,
           decoration: BoxDecoration(
             color: Colors.white,
           ),

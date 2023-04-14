@@ -64,7 +64,7 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
             ],
           ),
           Positioned(
-            top: 48,
+            top: kToolbarHeight + 24,
             right: 24,
             child: CustomDropdown(
               items: lang,
