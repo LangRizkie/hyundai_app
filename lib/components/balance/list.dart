@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:flutter_modular/flutter_modular.dart";
 import "package:flutter_scale_tap/flutter_scale_tap.dart";
 import "package:hyundai_app/components/gap.dart";
+import "package:hyundai_app/modules/global.dart";
 import "package:hyundai_app/modules/route.dart";
 import "package:hyundai_app/modules/theme.dart";
 
@@ -26,7 +27,7 @@ class _ListComponentState extends State<ListComponent> {
 
   card() {
     return ScaleTap(
-      scaleMinValue: 0.99,
+      scaleMinValue: Global.scaleMinValue,
       onPressed: () => Modular.to.pushNamed(Screens.balanceHistory),
       child: Container(
         width: double.infinity,

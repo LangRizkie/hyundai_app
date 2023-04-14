@@ -10,6 +10,7 @@ import "package:hyundai_app/components/gap.dart";
 import "package:hyundai_app/components/input_calendar.dart";
 import "package:hyundai_app/components/labeled_textformfield.dart";
 import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/modules/global.dart";
 import "package:hyundai_app/modules/theme.dart";
 
 class MyCarUpdatePageScreen extends StatefulWidget {
@@ -80,6 +81,7 @@ class _MyCarUpdatePageScreenState extends State<MyCarUpdatePageScreen> {
                   label: "Car Registration Letter Photo",
                   informationLabel: "STNK/SKCK Number",
                   child: ScaleTap(
+                    scaleMinValue: Global.scaleMinValue,
                     onPressed: onPressedSelectPhoto,
                     child: DottedBorder(
                       dashPattern: const [6, 6],

@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/modules/global.dart";
 import "package:hyundai_app/modules/theme.dart";
 
 class CustomListIconButton extends StatefulWidget {
@@ -34,7 +35,7 @@ class _CustomListIconButtonState extends State<CustomListIconButton> {
   @override
   Widget build(BuildContext context) {
     return ScaleTap(
-      scaleMinValue: 0.99,
+      scaleMinValue: Global.scaleMinValue,
       onPressed: widget.onPressed,
       child: Container(
         padding: const EdgeInsets.all(16),

@@ -8,6 +8,7 @@ import "package:hyundai_app/components/gap.dart";
 import "package:hyundai_app/components/input_calendar.dart";
 import "package:hyundai_app/components/input_dropdown.dart";
 import "package:hyundai_app/components/labeled_textformfield.dart";
+import "package:hyundai_app/modules/global.dart";
 import "package:hyundai_app/modules/theme.dart";
 
 class RegisterFirstStepScreen extends StatefulWidget {
@@ -85,7 +86,7 @@ class _RegisterFirstStepScreenState extends State<RegisterFirstStepScreen> {
                     children: [
                       ScaleTap(
                         onPressed: () {},
-                        scaleMinValue: 0.99,
+                        scaleMinValue: Global.scaleMinValue,
                         child: Container(
                           padding: const EdgeInsets.all(14),
                           margin: const EdgeInsets.only(right: 14),

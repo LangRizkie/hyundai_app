@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/modules/global.dart";
 
 class Expandable extends StatefulWidget {
   const Expandable({
@@ -36,7 +37,7 @@ class _ExpandableState extends State<Expandable> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ScaleTap(
-            scaleMinValue: 0.99,
+            scaleMinValue: Global.scaleMinValue,
             onPressed: onPressed,
             child: Container(
               padding: const EdgeInsets.all(16),
