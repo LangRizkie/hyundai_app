@@ -1,4 +1,3 @@
-import "package:camera/camera.dart";
 import "package:dotted_border/dotted_border.dart";
 import "package:flutter/material.dart";
 import "package:flutter_modular/flutter_modular.dart";

@@ -105,10 +105,10 @@ class _DetailPageScreenState extends State<DetailPageScreen>
                     controller: tabController,
                     children: const [
                       Center(
-                        child: Text("It"s cloudy here"),
+                        child: Text("It's cloudy here"),
                       ),
                       Center(
-                        child: Text("It"s rainy here"),
+                        child: Text("It's rainy here"),
                       ),
                     ],
                   ),

@@ -17,7 +17,7 @@ class _WhatsOnComponentState extends State<WhatsOnComponent> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const TitleRoute(
-          title: "What"s On",
+          title: "What's On",
           description: "See the latest promo from Hyundai",
           fontSize: 20,
           action: true,

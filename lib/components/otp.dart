@@ -98,7 +98,7 @@ class _OTPState extends State<OTP> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            "Didn"t receive OTP code?",
+                            "Didn't receive OTP code?",
                             style: TextStyle(
                               fontFamily: Constant.fontFamilyText,
                               fontSize: 14,
