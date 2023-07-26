@@ -216,7 +216,6 @@ class _MyCarStatusComponentState extends State<MyCarStatusComponent> {
       context: context,
       backgroundColor: Colors.transparent,
       enableDrag: false,
-      useSafeArea: true,
       isScrollControlled: true,
       builder: (context) => CustomBottomSheet(
         title: "More Information",

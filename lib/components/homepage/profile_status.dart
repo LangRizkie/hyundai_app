@@ -130,7 +130,6 @@ class _ProfileStatusState extends State<ProfileStatus> {
       context: context,
       backgroundColor: Colors.transparent,
       enableDrag: false,
-      useSafeArea: true,
       isScrollControlled: true,
       builder: (context) => const CustomBottomSheet(
         title: "Member Info",

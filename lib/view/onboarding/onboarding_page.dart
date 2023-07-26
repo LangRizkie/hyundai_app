@@ -64,7 +64,7 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
             ],
           ),
           Positioned(
-            top: 48,
+            top: kToolbarHeight + 24,
             right: 24,
             child: CustomDropdown(
               items: lang,
@@ -150,7 +150,12 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
 
     return Container(
       width: MediaQuery.of(context).size.width,
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.fromLTRB(
+        16,
+        16,
+        16,
+        MediaQuery.of(context).viewPadding.bottom,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

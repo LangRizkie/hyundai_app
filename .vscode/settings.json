@@ -5,10 +5,14 @@
     "Dismissable",
     "fluttericon",
     "Ioniq",
+    "ISMAYA",
+    "SKCK",
     "spinkit",
+    "STNK",
     "sublist",
     "Swiper",
     "textformfield",
     "vsync"
-  ]
+  ],
+  "nuxt.isNuxtApp": false
 }

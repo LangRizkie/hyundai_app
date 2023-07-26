@@ -264,7 +264,6 @@ class _MyCarDetailPageScreenState extends State<MyCarDetailPageScreen> {
       context: context,
       backgroundColor: Colors.transparent,
       enableDrag: false,
-      useSafeArea: true,
       isScrollControlled: true,
       builder: (context) => CustomBottomSheet(
         title: "Registration Data",

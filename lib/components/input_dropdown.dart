@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/modules/global.dart";
 
 class InputDropdown extends StatefulWidget {
   const InputDropdown({
@@ -24,7 +25,7 @@ class _InputDropdownState extends State<InputDropdown> {
   Widget build(BuildContext context) {
     return ScaleTap(
       onPressed: widget.onPressed,
-      scaleMinValue: 0.99,
+      scaleMinValue: Global.scaleMinValue,
       child: Container(
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.all(14),
