@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/gap.dart";
 import "package:hyundai_app/modules/theme.dart";
 
 class ProfileData extends StatefulWidget {
@@ -45,11 +47,24 @@ class _ProfileDataState extends State<ProfileData> {
                       ],
                     ),
                   ),
-                  IconButton(
-                    icon: const Icon(
-                      Icons.edit_outlined,
-                      color: Colors.white,
-                      size: 24,
+                  ScaleTap(
+                    child: const Gap(
+                      gap: 2,
+                      direction: Axis.vertical,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.star_outline_rounded,
+                          color: Colors.white,
+                          size: 24,
+                        ),
+                        Text(
+                          "Check-In",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                          ),
+                        )
+                      ],
                     ),
                     onPressed: () {},
                   )

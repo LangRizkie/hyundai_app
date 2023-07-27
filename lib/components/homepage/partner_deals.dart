@@ -29,7 +29,7 @@ class _PartnerDealsComponentState extends State<PartnerDealsComponent> {
       child: Column(
         children: [
           const TitleRoute(
-            title: "Partner Deals",
+            title: "Reward Redemption",
           ),
           Container(
             decoration: const BoxDecoration(

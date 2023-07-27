@@ -31,7 +31,7 @@ class _ServicesComponentState extends State<ServicesComponent> {
       child: Column(
         children: [
           const TitleRoute(
-            title: "Hyundai Services",
+            title: "One-Stop Hyundai",
           ),
           Container(
             decoration: const BoxDecoration(

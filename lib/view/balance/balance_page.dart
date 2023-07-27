@@ -23,13 +23,13 @@ class _BalancePageScreenState extends State<BalancePageScreen> {
     return Layout(
       appBar: CustomAppBar(
         title: "Balance History",
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.av_timer),
-            color: Colors.black,
-            onPressed: () => Modular.to.pushNamed(Screens.balanceExpiry),
-          )
-        ],
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(Icons.av_timer),
+        //     color: Colors.black,
+        //     onPressed: () => Modular.to.pushNamed(Screens.balanceExpiry),
+        //   )
+        // ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

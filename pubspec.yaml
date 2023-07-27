@@ -57,6 +57,7 @@ dependencies:
   sticky_headers: ^0.3.0+2
   text_divider: ^1.0.0
   iconify_flutter: ^0.0.5
+  syncfusion_flutter_datepicker: ^22.2.5
   
 
 dev_dependencies:

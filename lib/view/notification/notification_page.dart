@@ -2,12 +2,15 @@ import "package:flutter/material.dart";
 import "package:flutter_modular/flutter_modular.dart";
 import "package:hyundai_app/components/customization/custom_app_bar.dart";
 import "package:hyundai_app/components/customization/custom_bottomsheet.dart";
+import "package:hyundai_app/components/customization/custom_button.dart";
 import "package:hyundai_app/components/customization/custom_list_icon_button.dart";
 import "package:hyundai_app/components/filter.dart";
 import "package:hyundai_app/components/layout.dart";
+import "package:hyundai_app/modules/global.dart";
 import "package:hyundai_app/modules/theme.dart";
 import "package:iconify_flutter/iconify_flutter.dart";
 import "package:iconify_flutter/icons/mdi.dart";
+import "package:syncfusion_flutter_datepicker/datepicker.dart";
 
 class NotificationPageScreen extends StatefulWidget {
   const NotificationPageScreen({super.key});
@@ -50,7 +53,7 @@ class _NotificationPageScreenState extends State<NotificationPageScreen> {
           IconButton(
             icon: const Iconify(Mdi.calendar),
             color: Colors.black,
-            onPressed: () => {},
+            onPressed: onPressedCalendar,
           ),
         ],
       ),
@@ -107,6 +110,57 @@ class _NotificationPageScreenState extends State<NotificationPageScreen> {
               setState(() => activeSort = sorts[index]);
               Modular.to.pop();
             },
+          ),
+        ),
+      ),
+    );
+  }
+
+  onPressedCalendar() {
+    // print(selectedDate);
+
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      enableDrag: false,
+      isScrollControlled: true,
+      builder: (context) => SafeArea(
+        minimum: EdgeInsets.only(
+          top: Global.underToolbarHeight,
+        ),
+        bottom: false,
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            leading: CustomButton(
+              label: "Close",
+              textColor: Palette.primaryColor,
+              onPressed: () {
+                Modular.to.pop();
+              },
+            ),
+            actions: [
+              CustomButton(
+                label: "Reset",
+                textColor: Palette.primaryColor,
+                onPressed: () {
+                  Modular.to.pop();
+                },
+              ),
+              CustomButton(
+                label: "Submit",
+                textColor: Palette.primaryColor,
+                onPressed: () {
+                  Modular.to.pop();
+                },
+              ),
+            ],
+          ),
+          body: SfDateRangePicker(
+            enableMultiView: true,
+            view: DateRangePickerView.month,
+            selectionMode: DateRangePickerSelectionMode.range,
+            navigationDirection: DateRangePickerNavigationDirection.vertical,
           ),
         ),
       ),

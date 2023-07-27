@@ -9,6 +9,7 @@ class Global {
   static bool isLoggedIn = false;
   static int otp = 0;
   static double scaleMinValue = 0.99;
+  static double underToolbarHeight = kToolbarHeight + 24;
 
   static loadingOverlay(BuildContext context, {String? text}) {
     return showDialog(

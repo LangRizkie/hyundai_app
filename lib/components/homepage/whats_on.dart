@@ -17,8 +17,7 @@ class _WhatsOnComponentState extends State<WhatsOnComponent> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const TitleRoute(
-          title: "What's On",
-          description: "See the latest promo from Hyundai",
+          title: "Explore More",
           fontSize: 20,
           action: true,
         ),
@@ -26,24 +25,6 @@ class _WhatsOnComponentState extends State<WhatsOnComponent> {
           direction: Axis.vertical,
           gap: 16,
           children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(
-                  4,
-                  (index) => card(index),
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                "See the latest promo from Hyundai",
-                style: TextStyle(
-                  fontSize: 12,
-                ),
-              ),
-            ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(

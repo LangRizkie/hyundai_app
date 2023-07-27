@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 import "package:flutter_scale_tap/flutter_scale_tap.dart";
 import "package:hyundai_app/components/bluelink_status.dart";
+import "package:hyundai_app/components/customization/custom_bottomsheet.dart";
+import "package:hyundai_app/components/customization/custom_list_icon_button.dart";
 import "package:hyundai_app/modules/generic.dart";
 import "package:hyundai_app/modules/theme.dart";
 import "package:iconify_flutter/iconify_flutter.dart";
@@ -32,7 +34,7 @@ class _CarListAvailableSummaryState extends State<CarListAvailableSummary> {
   @override
   Widget build(BuildContext context) {
     return ScaleTap(
-      onPressed: () {},
+      onPressed: onPressedCar,
       child: Container(
         margin: const EdgeInsets.only(left: 16),
         decoration: BoxDecoration(
@@ -111,6 +113,28 @@ class _CarListAvailableSummaryState extends State<CarListAvailableSummary> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  onPressedCar() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (context) => CustomBottomSheet(
+        title: "IONIQ 5",
+        children: [
+          CustomListIconButton(
+            prefixIcon: Icons.abc,
+            label: "BlueLink",
+            onPressed: () {},
+          ),
+          CustomListIconButton(
+            prefixIcon: Icons.car_repair_outlined,
+            label: "Car Detail",
+            onPressed: () {},
+          ),
+        ],
       ),
     );
   }

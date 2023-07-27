@@ -6,8 +6,6 @@ import "package:hyundai_app/components/customization/custom_list_icon_button.dar
 import "package:hyundai_app/components/gap.dart";
 import "package:hyundai_app/components/homepage/advertisement.dart";
 import "package:hyundai_app/components/homepage/carlist.dart";
-import "package:hyundai_app/components/homepage/collect_coupons.dart";
-import "package:hyundai_app/components/homepage/lifestyle_benefit.dart";
 import "package:hyundai_app/components/homepage/our_partner.dart";
 import "package:hyundai_app/components/homepage/partner.dart";
 import "package:hyundai_app/components/homepage/partner_deals.dart";
@@ -55,20 +53,17 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     ],
                   ),
                 ),
-                const ServicesComponent(),
                 const AdvertisementComponent(),
-                const PartnerDealsComponent(),
-                const LifeStyleBenefitComponent(),
+                const ServicesComponent(),
                 Container(
-                  margin: const EdgeInsets.only(top: 16),
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.all(16),
                   child: Gap(
                     gap: 8,
                     direction: Axis.vertical,
                     children: [
                       CustomListIconButton(
                         onPressed: () {},
-                        label: "Exclusive Deals For You",
+                        label: "Exclusive Benefits For You",
                         useBottomBorder: false,
                         color: Colors.white,
                         backgroundColor: Palette.primaryColor,
@@ -85,8 +80,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     ],
                   ),
                 ),
+                const PartnerDealsComponent(),
+                // const LifeStyleBenefitComponent(),
                 const OurPartnerComponent(),
-                const CollectCouponComponent(),
+                // const CollectCouponComponent(),
                 const WhatsOnComponent(),
               ],
             ),

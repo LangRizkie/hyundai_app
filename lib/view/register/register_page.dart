@@ -125,8 +125,8 @@ class _RegisterPageScreenState extends State<RegisterPageScreen>
       enableDrag: false,
       isScrollControlled: true,
       builder: (context) => SafeArea(
-        minimum: const EdgeInsets.only(
-          top: kToolbarHeight,
+        minimum: EdgeInsets.only(
+          top: Global.underToolbarHeight,
         ),
         bottom: false,
         child: OTP(
