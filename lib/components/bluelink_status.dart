@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:hyundai_app/components/gap.dart";
 import "package:hyundai_app/modules/theme.dart";
 
 class BlueLinkStatus extends StatefulWidget {
@@ -30,25 +31,27 @@ class _BlueLinkStatusState extends State<BlueLinkStatus> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-        vertical: 4,
+        vertical: 2,
         horizontal: 8,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: color,
       ),
-      child: Wrap(
-        spacing: 4,
+      child: Gap(
+        gap: 4,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const Icon(
             Icons.share_outlined,
-            size: 10,
+            size: 8,
             color: Colors.white,
           ),
           Text(
             status,
             style: const TextStyle(
               fontSize: 10,
+              fontWeight: FontWeight.w500,
               color: Colors.white,
             ),
           ),

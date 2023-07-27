@@ -43,17 +43,17 @@ class _ListComponentState extends State<ListComponent> {
             ),
           ),
         ),
-        child: Row(
+        child: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Gap(
               gap: 12,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Icon(Icons.assignment_ind_outlined),
+                Icon(Icons.assignment_ind_outlined),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       "Membership Reward",
                       style: TextStyle(
@@ -71,7 +71,7 @@ class _ListComponentState extends State<ListComponent> {
                 )
               ],
             ),
-            const Text(
+            Text(
               "+20.000",
               style: TextStyle(
                 fontSize: 14,

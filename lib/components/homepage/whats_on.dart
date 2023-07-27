@@ -88,9 +88,9 @@ class _WhatsOnComponentState extends State<WhatsOnComponent> {
           ),
           Container(
             padding: const EdgeInsets.all(16),
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
                   "28 July 2022",
                   style: TextStyle(

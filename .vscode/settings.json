@@ -4,6 +4,7 @@
     "bottomsheet",
     "Dismissable",
     "fluttericon",
+    "Iconify",
     "Ioniq",
     "ISMAYA",
     "SKCK",
@@ -14,5 +15,4 @@
     "textformfield",
     "vsync"
   ],
-  "nuxt.isNuxtApp": false
 }

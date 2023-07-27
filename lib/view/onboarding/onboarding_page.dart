@@ -156,40 +156,44 @@ class _OnBoardingPageScreenState extends State<OnBoardingPageScreen> {
         16,
         MediaQuery.of(context).viewPadding.bottom,
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          TextButton(
-            onPressed: () =>
-                controller.move(isLastIndex ? currentIndex - 1 : itemCount - 1),
-            child: Text(
-              isLastIndex ? "Back" : "Skip",
-              style: const TextStyle(
-                color: Palette.primaryColor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            TextButton(
+              onPressed: () => controller
+                  .move(isLastIndex ? currentIndex - 1 : itemCount - 1),
+              child: Text(
+                isLastIndex ? "Back" : "Skip",
+                style: const TextStyle(
+                  color: Palette.primaryColor,
+                ),
               ),
             ),
-          ),
-          Gap(
-            gap: 8,
-            direction: Axis.horizontal,
-            children: List.generate(
-              itemCount,
-              (index) => dots(
-                isActive: currentIndex == index,
-                onTap: () => controller.move(index),
+            Gap(
+              gap: 8,
+              direction: Axis.horizontal,
+              children: List.generate(
+                itemCount,
+                (index) => dots(
+                  isActive: currentIndex == index,
+                  onTap: () => controller.move(index),
+                ),
               ),
             ),
-          ),
-          ElevatedButton(
-            onPressed: () => currentIndex == itemCount - 1
-                ? Modular.to.navigate(Screens.login)
-                : controller.next(),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Palette.primaryColor),
+            ElevatedButton(
+              onPressed: () => currentIndex == itemCount - 1
+                  ? Modular.to.navigate(Screens.login)
+                  : controller.next(),
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all(Palette.primaryColor),
+              ),
+              child: Text(isLastIndex ? "Get Started" : "Next"),
             ),
-            child: Text(isLastIndex ? "Get Started" : "Next"),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

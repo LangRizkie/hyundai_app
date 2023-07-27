@@ -35,19 +35,16 @@ class _BalancePageScreenState extends State<BalancePageScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const Padding(
+            padding: EdgeInsets.all(16),
+            child: SummaryComponent(),
+          ),
           Padding(
-            padding: const EdgeInsets.all(16),
-            child: Gap(
-              gap: 16,
-              direction: Axis.vertical,
-              children: [
-                const SummaryComponent(),
-                Filter(
-                  tags: filters,
-                  activeFilter: activeFilter,
-                  onTagPressed: (value) => setState(() => activeFilter = value),
-                ),
-              ],
+            padding: const EdgeInsets.only(bottom: 16),
+            child: Filter(
+              tags: filters,
+              activeFilter: activeFilter,
+              onTagPressed: (value) => setState(() => activeFilter = value),
             ),
           ),
           const ListComponent(),

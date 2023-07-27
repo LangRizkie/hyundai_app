@@ -63,9 +63,9 @@ class _MyCarStatusComponentState extends State<MyCarStatusComponent> {
       gap: 8,
       direction: Axis.vertical,
       children: [
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             Text(
               "IONIQ 5",
               style: TextStyle(
@@ -87,8 +87,8 @@ class _MyCarStatusComponentState extends State<MyCarStatusComponent> {
             fontSize: 14,
           ),
         ),
-        Row(
-          children: const [
+        const Row(
+          children: [
             Expanded(
               child: Gap(
                 gap: 4,

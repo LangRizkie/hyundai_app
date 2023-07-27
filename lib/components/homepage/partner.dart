@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_scale_tap/flutter_scale_tap.dart";
+import "package:hyundai_app/components/title_route.dart";
 import "package:hyundai_app/modules/helper.dart";
 import "package:hyundai_app/modules/theme.dart";
 
@@ -15,27 +16,35 @@ class _PartnerComponentState extends State<PartnerComponent> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        vertical: 16,
-      ),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        clipBehavior: Clip.none,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: List.generate(
-            totalPartner,
-            (index) => Container(
-              margin: EdgeInsets.only(
-                left: 16,
-                right: index == (totalPartner - 1) ? 16 : 0,
+    return Column(
+      children: [
+        const TitleRoute(
+          title: "What's Going On?",
+        ),
+        Container(
+          padding: const EdgeInsets.only(
+            top: 8,
+            bottom: 16,
+          ),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            clipBehavior: Clip.none,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(
+                totalPartner,
+                (index) => Container(
+                  margin: EdgeInsets.only(
+                    left: 16,
+                    right: index == (totalPartner - 1) ? 16 : 0,
+                  ),
+                  child: item(),
+                ),
               ),
-              child: item(),
             ),
           ),
         ),
-      ),
+      ],
     );
   }
 

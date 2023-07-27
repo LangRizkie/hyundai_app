@@ -50,9 +50,9 @@ class _BalanceExpiryPageScreenState extends State<BalanceExpiryPageScreen> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         color: Palette.backgroundColor,
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Text(
                               "August",
                               style: TextStyle(
@@ -75,9 +75,9 @@ class _BalanceExpiryPageScreenState extends State<BalanceExpiryPageScreen> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         color: Palette.backgroundColor,
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Text(
                               "September",
                               style: TextStyle(
@@ -122,9 +122,9 @@ class _BalanceExpiryPageScreenState extends State<BalanceExpiryPageScreen> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         color: Palette.backgroundColor,
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Text(
                               "August",
                               style: TextStyle(
@@ -147,9 +147,9 @@ class _BalanceExpiryPageScreenState extends State<BalanceExpiryPageScreen> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         color: Palette.backgroundColor,
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Text(
                               "September",
                               style: TextStyle(

@@ -29,7 +29,7 @@ class _FilterState extends State<Filter> {
           widget.tags.length,
           (index) => Container(
             margin: EdgeInsets.only(
-              left: 0,
+              left: index == 0 ? 16 : 0,
               right: index == widget.tags.length - 1 ? 16 : 0,
             ),
             child: Tag(

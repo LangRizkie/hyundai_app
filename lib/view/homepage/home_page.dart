@@ -48,10 +48,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 const ProfileComponent(),
                 Container(
                   color: Palette.backgroundColor,
-                  child: Column(
-                    children: const [
-                      PartnerComponent(),
+                  child: const Column(
+                    children: [
                       CarListComponent(),
+                      PartnerComponent(),
                     ],
                   ),
                 ),

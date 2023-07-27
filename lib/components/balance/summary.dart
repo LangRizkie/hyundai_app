@@ -21,7 +21,7 @@ class _SummaryComponentState extends State<SummaryComponent> {
           color: Palette.backgroundSecondaryColor,
         ),
       ),
-      child: Row(
+      child: const Row(
         children: [
           Expanded(
             flex: 2,
@@ -29,10 +29,10 @@ class _SummaryComponentState extends State<SummaryComponent> {
               gap: 12,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Icon(Icons.blur_circular),
+                Icon(Icons.blur_circular),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       "Coins Balance",
                       style: TextStyle(
@@ -57,10 +57,10 @@ class _SummaryComponentState extends State<SummaryComponent> {
               gap: 12,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Icon(Icons.group_add_outlined),
+                Icon(Icons.group_add_outlined),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       "Referral",
                       style: TextStyle(

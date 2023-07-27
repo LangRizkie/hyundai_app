@@ -67,9 +67,9 @@ class _LifeStyleBenefitComponentState extends State<LifeStyleBenefitComponent> {
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
                   "Group",
                   style: TextStyle(

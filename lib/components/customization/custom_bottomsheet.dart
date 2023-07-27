@@ -27,52 +27,54 @@ class CustomBottomSheet extends StatefulWidget {
 class _CustomBottomSheetState extends State<CustomBottomSheet> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(
-        bottom: MediaQuery.of(context).viewPadding.bottom,
-      ),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
-        ),
-      ),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment:
-              widget.mainAxisAlignment ?? MainAxisAlignment.start,
-          crossAxisAlignment:
-              widget.crossAxisAlignment ?? CrossAxisAlignment.center,
-          mainAxisSize: widget.mainAxisSize ?? MainAxisSize.max,
-          children: [
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              child: Stack(
-                children: [
-                  Center(
-                    child: Text(
-                      widget.title ?? "",
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ),
-                  if (widget.isDismissable ?? false)
-                    Positioned(
-                      left: 0,
-                      child: ScaleTap(
-                        onPressed: () => Modular.to.pop(),
-                        child: const Icon(Icons.close),
-                      ),
-                    ),
-                ],
-              ),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: MediaQuery.of(context).viewInsets,
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(16),
+              topRight: Radius.circular(16),
             ),
-            ...widget.children
-          ],
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment:
+                  widget.mainAxisAlignment ?? MainAxisAlignment.start,
+              crossAxisAlignment:
+                  widget.crossAxisAlignment ?? CrossAxisAlignment.center,
+              mainAxisSize: widget.mainAxisSize ?? MainAxisSize.max,
+              children: [
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(16),
+                  child: Stack(
+                    children: [
+                      Center(
+                        child: Text(
+                          widget.title ?? "",
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                      if (widget.isDismissable ?? false)
+                        Positioned(
+                          left: 0,
+                          child: ScaleTap(
+                            onPressed: () => Modular.to.pop(),
+                            child: const Icon(Icons.close),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+                ...widget.children
+              ],
+            ),
+          ),
         ),
       ),
     );

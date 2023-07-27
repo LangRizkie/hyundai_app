@@ -65,11 +65,11 @@ class _MyCarListComponentState extends State<MyCarListComponent> {
   }
 
   customCardCarSummary() {
-    return Gap(
+    return const Gap(
       gap: 8,
       direction: Axis.vertical,
       children: [
-        const Text(
+        Text(
           "B 1234 IDN",
           style: TextStyle(
             fontFamily: Constant.fontFamilyText,
@@ -77,7 +77,7 @@ class _MyCarListComponentState extends State<MyCarListComponent> {
             color: Palette.secondaryColor,
           ),
         ),
-        const Text(
+        Text(
           "IONIQ 5",
           style: TextStyle(
             fontWeight: FontWeight.w500,
@@ -85,7 +85,7 @@ class _MyCarListComponentState extends State<MyCarListComponent> {
           ),
         ),
         Row(
-          children: const [
+          children: [
             Expanded(
               child: Gap(
                 gap: 4,

@@ -32,7 +32,7 @@ class _CarListAvailableState extends State<CarListAvailable> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 144,
+      height: 64,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         clipBehavior: Clip.none,

@@ -5,17 +5,19 @@ import "package:hyundai_app/modules/theme.dart";
 
 class CustomListIconButton extends StatefulWidget {
   const CustomListIconButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.label,
-    this.prefixIcon,
     this.color,
     this.backgroundColor,
+    this.prefixIcon,
     this.prefixIconColor = Colors.black,
+    this.customPrefixIcon,
     this.suffixIcon = Icons.chevron_right,
     this.suffixIconColor = Colors.black,
+    this.customSuffixIcon,
     this.useBottomBorder = true,
-  }) : super(key: key);
+  }) : assert(prefixIcon == null || customPrefixIcon == null);
 
   final Function() onPressed;
   final String label;
@@ -23,8 +25,10 @@ class CustomListIconButton extends StatefulWidget {
   final Color? backgroundColor;
   final IconData? prefixIcon;
   final Color? prefixIconColor;
+  final Widget? customPrefixIcon;
   final IconData? suffixIcon;
   final Color? suffixIconColor;
+  final Widget? customSuffixIcon;
   final bool? useBottomBorder;
 
   @override
@@ -67,21 +71,25 @@ class _CustomListIconButtonState extends State<CustomListIconButton> {
                       color: widget.prefixIconColor,
                     ),
                   ),
+                if (widget.customPrefixIcon != null)
+                  widget.customPrefixIcon as Widget,
                 Text(
                   widget.label,
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     color: widget.color ?? Colors.black,
                   ),
                 ),
               ],
             ),
-            if (widget.suffixIcon != null)
+            if (widget.suffixIcon != null && widget.customSuffixIcon == null)
               Icon(
                 widget.suffixIcon,
                 size: 22,
                 color: widget.suffixIconColor,
               ),
+            if (widget.customSuffixIcon != null)
+              widget.customSuffixIcon as Widget
           ],
         ),
       ),

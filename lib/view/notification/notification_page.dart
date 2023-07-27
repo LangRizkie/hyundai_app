@@ -1,7 +1,13 @@
 import "package:flutter/material.dart";
+import "package:flutter_modular/flutter_modular.dart";
 import "package:hyundai_app/components/customization/custom_app_bar.dart";
+import "package:hyundai_app/components/customization/custom_bottomsheet.dart";
+import "package:hyundai_app/components/customization/custom_list_icon_button.dart";
+import "package:hyundai_app/components/filter.dart";
 import "package:hyundai_app/components/layout.dart";
 import "package:hyundai_app/modules/theme.dart";
+import "package:iconify_flutter/iconify_flutter.dart";
+import "package:iconify_flutter/icons/mdi.dart";
 
 class NotificationPageScreen extends StatefulWidget {
   const NotificationPageScreen({super.key});
@@ -11,6 +17,20 @@ class NotificationPageScreen extends StatefulWidget {
 }
 
 class _NotificationPageScreenState extends State<NotificationPageScreen> {
+  final filters = [
+    "All",
+    "Promo",
+    "Coins",
+    "Campaign",
+    "Service & Accessories",
+    "daily Check-in"
+  ];
+
+  final sorts = ["Oldest", "Latest", "Read", "Unread"];
+
+  String activeFilter = "All";
+  String activeSort = "Latest";
+
   @override
   void initState() {
     super.initState();
@@ -21,17 +41,73 @@ class _NotificationPageScreenState extends State<NotificationPageScreen> {
     return Layout(
       appBar: CustomAppBar(
         title: "Notification Center",
+        actions: [
+          IconButton(
+            icon: const Iconify(Mdi.sort_bool_descending_variant),
+            color: Colors.black,
+            onPressed: onPressedSort,
+          ),
+          IconButton(
+            icon: const Iconify(Mdi.calendar),
+            color: Colors.black,
+            onPressed: () => {},
+          ),
+        ],
       ),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            card(),
-            card(isPrimary: false),
-            card(isPrimary: false),
-            card(),
-            card(isPrimary: false),
-            card(isPrimary: false),
-          ],
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            color: Colors.white,
+            child: Filter(
+              tags: filters,
+              activeFilter: activeFilter,
+              onTagPressed: (value) => setState(() => activeFilter = value),
+            ),
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  card(),
+                  card(isPrimary: false),
+                  card(isPrimary: false),
+                  card(),
+                  card(isPrimary: false),
+                  card(isPrimary: false),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  onPressedSort() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (context) => CustomBottomSheet(
+        title: "Sort",
+        children: List.generate(
+          sorts.length,
+          (index) => CustomListIconButton(
+            label: sorts[index],
+            suffixIcon: null,
+            customSuffixIcon: activeSort == sorts[index]
+                ? const Iconify(
+                    Mdi.check_circle,
+                    size: 20,
+                    color: Palette.secondaryColor,
+                  )
+                : null,
+            onPressed: () {
+              setState(() => activeSort = sorts[index]);
+              Modular.to.pop();
+            },
+          ),
         ),
       ),
     );

@@ -64,7 +64,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
         widget.title ?? "",
         style: const TextStyle(
           color: Colors.black,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w500,
         ),
       ),
       backgroundColor:

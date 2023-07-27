@@ -92,8 +92,8 @@ class _MyCarDetailPageScreenState extends State<MyCarDetailPageScreen> {
             fontSize: 24,
           ),
         ),
-        Row(
-          children: const [
+        const Row(
+          children: [
             Expanded(
               child: Gap(
                 gap: 4,
@@ -140,8 +140,8 @@ class _MyCarDetailPageScreenState extends State<MyCarDetailPageScreen> {
             ),
           ],
         ),
-        Row(
-          children: const [
+        const Row(
+          children: [
             Expanded(
               child: Gap(
                 gap: 4,
@@ -197,9 +197,9 @@ class _MyCarDetailPageScreenState extends State<MyCarDetailPageScreen> {
             ),
           ),
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             Gap(
               gap: 4,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -226,9 +226,9 @@ class _MyCarDetailPageScreenState extends State<MyCarDetailPageScreen> {
             ),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             Gap(
               gap: 4,
               crossAxisAlignment: CrossAxisAlignment.center,

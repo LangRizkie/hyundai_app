@@ -295,10 +295,10 @@ class _DetailPageScreenState extends State<DetailPageScreen>
         color: Colors.white,
         child: Row(
           children: [
-            Expanded(
+            const Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     "20.000 Coins",
                     style: TextStyle(

@@ -44,10 +44,10 @@ class _TitleRouteState extends State<TitleRoute> {
               if (widget.action != null)
                 ScaleTap(
                   onPressed: widget.onPressed,
-                  child: Wrap(
+                  child: const Wrap(
                     crossAxisAlignment: WrapCrossAlignment.center,
                     spacing: 2,
-                    children: const [
+                    children: [
                       Text(
                         "See All",
                         style: TextStyle(

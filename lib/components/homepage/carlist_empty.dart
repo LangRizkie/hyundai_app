@@ -70,10 +70,10 @@ class _CarListEmptyState extends State<CarListEmpty> {
                                     ),
                                   ),
                                 ),
-                                Wrap(
+                                const Wrap(
                                   crossAxisAlignment: WrapCrossAlignment.center,
                                   spacing: 8,
-                                  children: const [
+                                  children: [
                                     Text(
                                       "Bluelink",
                                       style: TextStyle(
@@ -101,12 +101,12 @@ class _CarListEmptyState extends State<CarListEmpty> {
                       ),
                     ),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Wrap(
                       direction: Axis.vertical,
                       crossAxisAlignment: WrapCrossAlignment.center,
                       spacing: 4,
-                      children: const [
+                      children: [
                         Icon(
                           Icons.car_repair_outlined,
                           color: Palette.primaryColor,

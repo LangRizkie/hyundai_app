@@ -134,9 +134,9 @@ class _BalanceHistoryPageScreenState extends State<BalanceHistoryPageScreen> {
                         ),
                       ],
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Text(
                           "Date",
                           style: TextStyle(
